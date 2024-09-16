@@ -1,7 +1,12 @@
 import { quiz } from "./assets/data.js";
 import OptionSelection from "./multipleQuestion";
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
+import planner from "./assets/images/planner.jpeg";
+import lastMinuteGenius from "./assets/images/lastMinuteGenius.jpeg";
+import chillMaster from "./assets/images/chillMaster.jpeg";
+import studyBuddy from "./assets/images/studyBuddy.jpeg";
+import { FaSquareWhatsapp } from "react-icons/fa6";
 
 function App() {
   const [user, setUser] = React.useState("");
@@ -9,34 +14,34 @@ function App() {
   const [answers, setAnswers] = React.useState({});
   const [error, setError] = React.useState("");
   const [submit, setSubmit] = React.useState(true);
-  const [quizes, setQuizes] = React.useState([]);
+  // const [quizes, setQuizes] = React.useState([]);
 
-  React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(
-          "http://localhost:3000/generate-quiz",
-          {
-            topic: "personality development",
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        console.log(response);
-        setQuizes(response.data);
-      } catch (error) {
-        setError(error);
-        console.error("Error fetching data:", error);
-      }
-    };
+  // React.useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.post(
+  //         "http://localhost:3000/generate-quiz",
+  //         {
+  //           topic: "personality development",
+  //         },
+  //         {
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       );
+  //       console.log(response);
+  //       setQuizes(response.data);
+  //     } catch (error) {
+  //       setError(error);
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  console.log("quiz", quizes);
+  // console.log("quiz", quizes);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -114,7 +119,23 @@ function App() {
         </form>
       )}
 
-      <h1>{user}</h1>
+      <h1>
+        {user === "Planner" ? (
+          <img src={planner} height="200px" width="200px"></img>
+        ) : user === "Last-Minute Genius" ? (
+          <img src={lastMinuteGenius}></img>
+        ) : user === "Chill Master" ? (
+          <img src={chillMaster}></img>
+        ) : user === "Study Buddy" ? (
+          <img src={studyBuddy}></img>
+        ) : (
+          ""
+        )}
+      </h1>
+
+      <a href="https://api.whatsapp.com/send?text=Check%20out%20my%20quiz%20result:%20${https://imgur.com/a/DHwgcMV}">
+        <FaSquareWhatsapp />
+      </a>
 
       {submit && (
         <div className="flex gap-4 mt-4">
