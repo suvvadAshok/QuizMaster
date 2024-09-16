@@ -2,11 +2,8 @@ import { quiz } from "./assets/data.js";
 import OptionSelection from "./multipleQuestion";
 import React from "react";
 // import axios from "axios";
-import planner from "./assets/images/planner.jpeg";
-import lastMinuteGenius from "./assets/images/lastMinuteGenius.jpeg";
-import chillMaster from "./assets/images/chillMaster.jpeg";
-import studyBuddy from "./assets/images/studyBuddy.jpeg";
-import { FaSquareWhatsapp } from "react-icons/fa6";
+
+import { Personality } from "./personalityPage.jsx";
 
 function App() {
   const [user, setUser] = React.useState("");
@@ -119,9 +116,38 @@ function App() {
         </form>
       )}
 
-      <h1>
-        {user === "Planner" ? (
-          <img src={planner} height="200px" width="200px"></img>
+      {!submit && (
+        <>
+          <Personality personality={user} />
+          {/* {user === "Planner" ? (
+          <>
+            <img src={planner} height="200px" width="200px"></img>
+            <a
+              href="https://api.whatsapp.com/send?text=Check%20out%20my%20quiz%20result:%20${https://imgur.com/a/DHwgcMV}"
+              target="_blank"
+            >
+              <FaSquareWhatsapp />
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${imageUrl}`}
+              target="_blank"
+            >
+              Share on Facebook
+            </a>
+            <a
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${imageUrl}&title=Quiz%20Result&summary=Check%20out%20my%20quiz%20result!`}
+              target="_blank"
+            >
+              Linkedin
+            </a>
+            <a
+              href={`https://twitter.com/intent/tweet?url=${imageUrl}&text=Check%20out%20my%20quiz%20result!`}
+              target="_blank"
+            >
+              Twitter
+            </a>
+
+          </>
         ) : user === "Last-Minute Genius" ? (
           <img src={lastMinuteGenius}></img>
         ) : user === "Chill Master" ? (
@@ -130,12 +156,9 @@ function App() {
           <img src={studyBuddy}></img>
         ) : (
           ""
-        )}
-      </h1>
-
-      <a href="https://api.whatsapp.com/send?text=Check%20out%20my%20quiz%20result:%20${https://imgur.com/a/DHwgcMV}">
-        <FaSquareWhatsapp />
-      </a>
+        )} */}
+        </>
+      )}
 
       {submit && (
         <div className="flex gap-4 mt-4">
