@@ -10,14 +10,20 @@ const OptionSelection = (prop) => {
       <motion.h3
         className="font-medium"
         // animate={{ x: [100, 0] }}
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.5, x: 50 }}
+        animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
         {prop.questionData.question}
       </motion.h3>
       {prop.questionData.options.map((i) => (
-        <motion.div key={i.option} className="" animate={{ y: [100, 0] }}>
+        <motion.div
+          key={i.option}
+          className=""
+          initial={{ opacity: 0, scale: 0.5, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <label>
             <input
               required

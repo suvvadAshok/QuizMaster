@@ -1,6 +1,7 @@
 import { quiz } from "./assets/data.js";
 import OptionSelection from "./multipleQuestion";
 import React from "react";
+import axios from "axios";
 
 function App() {
   const [user, setUser] = React.useState("");
@@ -8,10 +9,37 @@ function App() {
   const [answers, setAnswers] = React.useState({});
   const [error, setError] = React.useState("");
   const [submit, setSubmit] = React.useState(true);
+  const [quizes, setQuizes] = React.useState([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/generate-quiz",
+          {
+            topic: "personality development",
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        console.log(response);
+        setQuizes(response.data);
+      } catch (error) {
+        setError(error);
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log("quiz", quizes);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setSubmit(false);
     setError("");
 
