@@ -33,7 +33,8 @@ const OptionSelection = (prop) => {
               name={prop.questionData.question}
               onChange={handleOptionChange}
             />
-            {i.option}
+            <p>{i.option}</p>
+            
           </label>
         </motion.div>
       ))}

@@ -3,19 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
 // Import your components
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './Pages/Home';
+import Quiz from './Pages/Quiz';
+import Result from './Pages/Result';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Client"> {/* Set the basename to '/Client' */}
       <Routes>
-        {/* Define routes here */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        {/* Define a catch-all route for 404 pages */}
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </Router>
   );
@@ -30,126 +28,152 @@ export default App;
 import OptionSelection from "./multipleQuestion";
 import React from "react";
 // import axios from "axios";
-import planner from "./assets/images/planner.jpeg";
-import lastMinuteGenius from "./assets/images/lastMinuteGenius.jpeg";
-import chillMaster from "./assets/images/chillMaster.jpeg";
-import studyBuddy from "./assets/images/studyBuddy.jpeg";
-import { FaSquareWhatsapp } from "react-icons/fa6";
 
-function App() {
-  const [user, setUser] = React.useState("");
-  const [qNum, setQNum] = React.useState(0);
-  const [answers, setAnswers] = React.useState({});
-  const [error, setError] = React.useState("");
-  const [submit, setSubmit] = React.useState(true);
-  // const [quizes, setQuizes] = React.useState([]);
+import { Personality } from "./personalityPage.jsx";
 
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.post(
-  //         "http://localhost:3000/generate-quiz",
-  //         {
-  //           topic: "personality development",
-  //         },
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //         }
-  //       );
-  //       console.log(response);
-  //       setQuizes(response.data);
-  //     } catch (error) {
-  //       setError(error);
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+// function App() {
+//   const [user, setUser] = React.useState("");
+//   const [qNum, setQNum] = React.useState(0);
+//   const [answers, setAnswers] = React.useState({});
+//   const [error, setError] = React.useState("");
+//   const [submit, setSubmit] = React.useState(true);
+//   // const [quizes, setQuizes] = React.useState([]);
 
-  //   fetchData();
-  // }, []);
+//   // React.useEffect(() => {
+//   //   const fetchData = async () => {
+//   //     try {
+//   //       const response = await axios.post(
+//   //         "http://localhost:3000/generate-quiz",
+//   //         {
+//   //           topic: "personality development",
+//   //         },
+//   //         {
+//   //           headers: {
+//   //             "Content-Type": "application/json",
+//   //           },
+//   //         }
+//   //       );
+//   //       console.log(response);
+//   //       setQuizes(response.data);
+//   //     } catch (error) {
+//   //       setError(error);
+//   //       console.error("Error fetching data:", error);
+//   //     }
+//   //   };
 
-  // console.log("quiz", quizes);
+//   //   fetchData();
+//   // }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmit(false);
-    setError("");
+//   // console.log("quiz", quizes);
 
-    if (Object.keys(answers).length !== quiz.length) {
-      setError("Please answer all questions before submitting.");
-      setSubmit(true);
-      return;
-    }
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setSubmit(false);
+//     setError("");
 
-    const ans = Object.values(answers);
-    let max = 0;
-    let value = "";
-    for (let i = 0; i < ans.length; i++) {
-      let count = 0;
-      for (let j = i + 1; j < ans.length; j++) {
-        if (ans[i] === ans[j]) {
-          count = count + 1;
-        }
-      }
-      if (max < count) {
-        max = count;
-        value = ans[i];
-      }
-    }
+//     if (Object.keys(answers).length !== quiz.length) {
+//       setError("Please answer all questions before submitting.");
+//       setSubmit(true);
+//       return;
+//     }
 
-    setUser(value);
+//     const ans = Object.values(answers);
+//     let max = 0;
+//     let value = "";
+//     for (let i = 0; i < ans.length; i++) {
+//       let count = 0;
+//       for (let j = i + 1; j < ans.length; j++) {
+//         if (ans[i] === ans[j]) {
+//           count = count + 1;
+//         }
+//       }
+//       if (max < count) {
+//         max = count;
+//         value = ans[i];
+//       }
+//     }
 
-    console.log("Submitted Answers:", answers);
-    alert("Quiz submitted! Check the console for your answers.");
-  };
+//     setUser(value);
 
-  const handleAnswerChange = (question, answer) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [question]: answer,
-    }));
-  };
+//     console.log("Submitted Answers:", answers);
+//     alert("Quiz submitted! Check the console for your answers.");
+//   };
 
-  const handleDecrease = () => {
-    setError("");
-    if (qNum > 0) {
-      setQNum(qNum - 1);
-    }
-  };
+//   const handleAnswerChange = (question, answer) => {
+//     setAnswers((prev) => ({
+//       ...prev,
+//       [question]: answer,
+//     }));
+//   };
 
-  const handleIncrease = () => {
-    if (qNum < quiz.length - 1) {
-      setQNum(qNum + 1);
-    }
-  };
+//   const handleDecrease = () => {
+//     setError("");
+//     if (qNum > 0) {
+//       setQNum(qNum - 1);
+//     }
+//   };
 
-  return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
-      {submit && (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div
-            key={quiz[qNum].question}
-            className="p-4 transition-all duration-300 ease-in-out"
-          >
-            <OptionSelection
-              questionData={quiz[qNum]}
-              onAnswerChange={(answer) =>
-                handleAnswerChange(quiz[qNum].question, answer)
-              }
-              selectedAnswer={answers[quiz[qNum].question]}
-            />
-          </div>
+//   const handleIncrease = () => {
+//     if (qNum < quiz.length - 1) {
+//       setQNum(qNum + 1);
+//     }
+//   };
 
-          {error && <p className="text-red-500">{error}</p>}
+//   return (
+//     <div className="h-screen w-screen flex flex-col justify-center items-center">
+//       {submit && (
+//         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+//           <div
+//             key={quiz[qNum].question}
+//             className="p-4 transition-all duration-300 ease-in-out"
+//           >
+//             <OptionSelection
+//               questionData={quiz[qNum]}
+//               onAnswerChange={(answer) =>
+//                 handleAnswerChange(quiz[qNum].question, answer)
+//               }
+//               selectedAnswer={answers[quiz[qNum].question]}
+//             />
+//           </div>
 
-          {qNum === quiz.length - 1 && <button type="submit">Submit</button>}
-        </form>
-      )}
+//           {error && <p className="text-red-500">{error}</p>}
 
-      <h1>
-        {user === "Planner" ? (
-          <img src={planner} height="200px" width="200px"></img>
+//           {qNum === quiz.length - 1 && <button type="submit">Submit</button>}
+//         </form>
+//       )}
+
+      {!submit && (
+        <>
+          <Personality personality={user} />
+          {/* {user === "Planner" ? (
+          <>
+            <img src={planner} height="200px" width="200px"></img>
+            <a
+              href="https://api.whatsapp.com/send?text=Check%20out%20my%20quiz%20result:%20${https://imgur.com/a/DHwgcMV}"
+              target="_blank"
+            >
+              <FaSquareWhatsapp />
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${imageUrl}`}
+              target="_blank"
+            >
+              Share on Facebook
+            </a>
+            <a
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${imageUrl}&title=Quiz%20Result&summary=Check%20out%20my%20quiz%20result!`}
+              target="_blank"
+            >
+              Linkedin
+            </a>
+            <a
+              href={`https://twitter.com/intent/tweet?url=${imageUrl}&text=Check%20out%20my%20quiz%20result!`}
+              target="_blank"
+            >
+              Twitter
+            </a>
+
+          </>
         ) : user === "Last-Minute Genius" ? (
           <img src={lastMinuteGenius}></img>
         ) : user === "Chill Master" ? (
@@ -158,33 +182,30 @@ function App() {
           <img src={studyBuddy}></img>
         ) : (
           ""
-        )}
-      </h1>
+        )} */}
+        // </>
+      // )}
 
-      <a href="https://api.whatsapp.com/send?text=Check%20out%20my%20quiz%20result:%20${https://imgur.com/a/DHwgcMV}">
-        <FaSquareWhatsapp />
-      </a>
+//       {submit && (
+//         <div className="flex gap-4 mt-4">
+//           <button
+//             onClick={handleDecrease}
+//             className={`${qNum === 0 && "hidden"}`}
+//           >
+//             Previous
+//           </button>
+//           <button
+//             onClick={handleIncrease}
+//             className={`${qNum === quiz.length - 1 && "hidden"}`}
+//           >
+//             Next
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
 
-      {submit && (
-        <div className="flex gap-4 mt-4">
-          <button
-            onClick={handleDecrease}
-            className={`${qNum === 0 && "hidden"}`}
-          >
-            Previous
-          </button>
-          <button
-            onClick={handleIncrease}
-            className={`${qNum === quiz.length - 1 && "hidden"}`}
-          >
-            Next
-          </button>
-        </div>
-      )}
-    </div>
-  );
-}
+// export default App;
 
-export default App;
-*/
-}
+// }

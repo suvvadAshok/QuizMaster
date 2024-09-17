@@ -1,11 +1,12 @@
-import { quiz } from "./assets/data.js";
-import OptionSelection from "./multipleQuestion";
+//import { quiz } from "./assets/data.js";
+import { quiz } from "../assets/data.js";
+import OptionSelection from "../multipleQuestion.jsx";
 import React from "react";
 // import axios from "axios";
-import planner from "./assets/images/planner.jpeg";
-import lastMinuteGenius from "./assets/images/lastMinuteGenius.jpeg";
-import chillMaster from "./assets/images/chillMaster.jpeg";
-import studyBuddy from "./assets/images/studyBuddy.jpeg";
+import planner from "../assets/images/planner.jpeg";
+import lastMinuteGenius from "../assets/images/lastMinuteGenius.jpeg";
+import chillMaster from "../assets/images/chillMaster.jpeg";
+import studyBuddy from "../assets/images/studyBuddy.jpeg";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 
 function Quiz() {
