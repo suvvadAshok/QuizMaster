@@ -1,3 +1,36 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.eot'); /* IE9 */
+    src: url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.woff2') format('woff2'), /* Modern Browsers */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.svg#GTWalsheimProRegular') format('svg'); /* Legacy iOS */
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.eot'); /* IE9 */
+    src: url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.woff') format('woff'), /* Modern Browsers */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.svg#GTWalsheimPro') format('svg'); /* Legacy iOS */
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body{
+    font-family: 'GT Walsheim Pro', sans-serif;
+    font-weight: 400;
+}
+
