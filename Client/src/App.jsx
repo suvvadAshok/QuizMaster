@@ -1,32 +1,4 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-
-// Import your components
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import NotFoundPage from './pages/NotFoundPage';
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        {/* Define routes here */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        {/* Define a catch-all route for 404 pages */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-
-
-
-{
-  /* import { quiz } from "./assets/data.js";
+import { quiz } from "./assets/data.js";
 import OptionSelection from "./multipleQuestion";
 import React from "react";
 // import axios from "axios";
@@ -209,5 +181,3 @@ function App() {
 }
 
 export default App;
-*/
-}
