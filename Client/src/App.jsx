@@ -28,6 +28,12 @@ export default App;
 import OptionSelection from "./multipleQuestion";
 import React from "react";
 // import axios from "axios";
+import { quiz } from "./assets/data.js";
+import OptionSelection from "./multipleQuestion";
+import React from "react";
+// import axios from "axios";
+
+import { Personality } from "./personalityPage.jsx";
 
 import { Personality } from "./personalityPage.jsx";
 
@@ -138,10 +144,13 @@ import { Personality } from "./personalityPage.jsx";
 
 //           {error && <p className="text-red-500">{error}</p>}
 
+<<<<<<< HEAD
 //           {qNum === quiz.length - 1 && <button type="submit">Submit</button>}
 //         </form>
 //       )}
 
+=======
+>>>>>>> fcaefe8f48bf7cd2f7418ee5381611235e6d0160
       {!submit && (
         <>
           <Personality personality={user} />
@@ -183,6 +192,7 @@ import { Personality } from "./personalityPage.jsx";
         ) : (
           ""
         )} */}
+<<<<<<< HEAD
         // </>
       // )}
 
@@ -205,7 +215,15 @@ import { Personality } from "./personalityPage.jsx";
 //     </div>
 //   );
 // }
+=======
+        </>
+      )}
+>>>>>>> fcaefe8f48bf7cd2f7418ee5381611235e6d0160
 
 // export default App;
 
+<<<<<<< HEAD
 // }
+=======
+export default App;
+>>>>>>> fcaefe8f48bf7cd2f7418ee5381611235e6d0160
