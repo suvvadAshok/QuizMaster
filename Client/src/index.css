@@ -92,10 +92,99 @@ body{
         border: 1px solid var(--neutral-400);
     background-color: var( --neutral-800);
     width: 200px;
+    column-gap: 6px;
+}
+#submit-here{
+    border-color: var(--neutral-300);
+    color: var(--white);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    transition: transform .35s, color .35s;
+    display: inline-flex;
+    justify-content: center;
+    border: 1px solid var(--neutral-400);
+background-color: var( --neutral-800);
+width: 200px; 
+text-align: center;
+margin-top: 20px;
+margin-left: 5px;
+}
+.prev{
+    transform-style: preserve-3d;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    transition: transform .35s, color .35s;
+    padding: 16px 32px;
+    border: 1px solid var(--neutral-800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    transition: transform .35s, color .35s;
+    transform-style: preserve-3d;
+}
+.nex{
+    border: 1px solid var(--neutral-400);
+    background-color: var(--neutral-800);
+    border-color: var(--neutral-300);
+    color: var(--white);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    transition: transform .35s, color .35s;
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    transition: transform .35s, color .35s;
+    transform-style: preserve-3d;
+}
+.prev-nex{
+    justify-content: center;
+    align-items: center;
+}
+.nex:hover{
+    transform: scale3d(.94, .94, 1.01);
 }
 .cta-button:hover{
         transform: scale3d(.94, .94, 1.01);
 }
+.cta-button span{
+    transition: transform .35s, color .35s;
+    transform-style: preserve-3d;
+}
+.cta-button:hover span{
+    margin-left: 10px;
+}
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(30px);  /* Start position */
+    animation: fadeInBottom 0.6s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes fadeInBottom {
+    to {
+      opacity: 1;
+      transform: translateY(0);  /* End position */
+    }
+  }
+ /* 
 .question-card{
     transform-style: preserve-3d;
     border-radius: 16px;
@@ -104,21 +193,27 @@ body{
     padding-bottom: 20px;
     transition: transform .35s;
     display: flex;
-}
-.card {
+    align-items: start;
     border: 1px solid var(--neutral-400);
     background-color: var(--white);
     color: var(--neutral-600);
     transform-style: preserve-3d;
     border-radius: 24px;
-    padding: 24px 24px 40px;
+    padding: 24px 24px 24px;
     text-decoration: none;
     transition: transform .35s, color .35s;
     box-shadow: 0 2px 8px rgba(20, 20, 43, .03);
 }
+.question-card:hover {
+    transform: scale3d(.94, .94, 1.01);
+    box-shadow: 0 1px 5px rgba(20, 20, 43, .02);
+    border-width: 3px;
+    border-color: var(--secondary-2);
+}
+*/
 .profile-img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: fill;
     border-radius: 50%;
     text-align: center;
@@ -136,6 +231,7 @@ body{
     justify-content: center;
     align-items: center;
     padding: 100px 0;
+    row-gap: 10px;
 }
 @media (max-width:820px){
     .home-div{
@@ -174,6 +270,8 @@ body{
 }
 a{
     text-decoration: none;
+    width: 100%;
+    text-align: center;
 }
 .home-div div{
     width: 100%;
@@ -181,3 +279,31 @@ a{
 .bg-black{
     background-color: #080808;
 }
+.option-input{
+    margin-top: 5px;
+}
+.option-card.selected {
+    transform: scale3d(.94, .94, 1.01);
+    box-shadow: 0 1px 5px rgba(20, 20, 43, .02);
+    border-width: 3px;
+    border-color: var(--secondary-2);     /* Change border color on selection */
+  }
+  .option-card {
+    transform-style: preserve-3d;
+    border-radius: 16px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: transform .35s;
+    display: flex;
+    align-items: start;
+    border: 1px solid var(--neutral-400);
+    background-color: var(--white);
+    color: var(--neutral-600);
+    transform-style: preserve-3d;
+    border-radius: 24px;
+    padding: 24px 24px 24px;
+    text-decoration: none;
+    transition: transform .35s, color .35s;
+    box-shadow: 0 2px 8px rgba(20, 20, 43, .03);
+  }
