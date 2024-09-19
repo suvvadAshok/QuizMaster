@@ -3,12 +3,6 @@ import { quiz } from "../assets/data.js";
 import OptionSelection from "../multipleQuestion.jsx";
 import React from "react";
 import {Personality} from "../personalityPage.jsx"
-// import axios from "axios";
-import planner from "../assets/images/planner.jpeg";
-import lastMinuteGenius from "../assets/images/lastMinuteGenius.jpeg";
-import chillMaster from "../assets/images/chillMaster.jpeg";
-import studyBuddy from "../assets/images/studyBuddy.jpeg";
-import { FaSquareWhatsapp } from "react-icons/fa6";
 
 function Quiz() {
   const [user, setUser] = React.useState("");
