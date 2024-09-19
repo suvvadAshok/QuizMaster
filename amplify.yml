@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd Client 
+        - cd Client
         - npm install
     build:
       commands:
@@ -15,3 +15,8 @@ frontend:
   cache:
     paths:
       - Client/node_modules/**/*
+
+  redirects:
+    - source: </> # Redirect any route
+      target: /index.html
+      status: 200
