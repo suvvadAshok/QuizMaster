@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd Client
+        - rm -rf Client/node_modules
         - npm install
     build:
       commands:
@@ -14,4 +14,4 @@ frontend:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
+      - Client/node_modules/**/*
