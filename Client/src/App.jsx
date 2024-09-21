@@ -1,13 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-
-// Import your components
-import HomePage from './Pages/Home';
-import Quiz from './Pages/Quiz';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";
+import HomePage from "./Pages/Home";
+import Quiz from "./Pages/Quiz";
 
 function App() {
   return (
-    <Router basename="/Client"> {/* Set the basename to '/Client' */}
+    <Router basename="/Client">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/quiz" element={<Quiz />} />
@@ -17,4 +15,3 @@ function App() {
 }
 
 export default App;
-
