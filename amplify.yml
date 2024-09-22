@@ -16,9 +16,12 @@ frontend:
     paths:
       - Client/node_modules/**/*
   redirects:
-    - source: </Client> # Redirect the root of Client
+    - source: /
       target: /Client/index.html
       status: 200
-    - source: </Client/*> # Redirect all other routes
+    - source: /Client
+      target: /Client/index.html
+      status: 200
+    - source: /Client/*
       target: /Client/index.html
       status: 200
