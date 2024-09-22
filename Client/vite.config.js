@@ -1,11 +1,14 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 export default defineConfig(({ mode }) => {
-  console.log("Vite Mode:", mode);
-  const basePath = mode === "production" ? "/Client/" : "/";
+  // Load environment variables based on the mode (development or production)
+  const env = loadEnv(mode, process.cwd());
 
-  console.log("Vite Mode:", mode, "Base Path:", basePath);
+  // Use the VITE_BASE_PATH or fallback to "/"
+  const basePath = env.VITE_BASE_PATH || "/";
+
+  console.log("Base Path:", basePath); // Check what base path is being set
 
   return {
     plugins: [react()],
@@ -13,11 +16,6 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: "dist",
       assetsDir: "assets",
-      rollupOptions: {
-        output: {
-          assetFileNames: "assets/[name]-[hash][extname]",
-        },
-      },
     },
   };
 });
