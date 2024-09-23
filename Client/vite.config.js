@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   // Use the VITE_BASE_PATH or fallback to "/Client/"
-  const basePath = env.VITE_BASE_PATH || "/Client/";
+  const basePath = env.VITE_BASE_PATH || "/Client/dist/";
 
   console.log("Base Path:", basePath); // Check what base path is being set
 
