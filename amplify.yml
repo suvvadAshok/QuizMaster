@@ -17,11 +17,11 @@ frontend:
       - Client/node_modules/**/*
   redirects:
     - source: /
-      target: /Client/index.html
+      target: /Client/dist/index.html
       status: 200
     - source: /Client
-      target: /Client/index.html
+      target: /Client/dist/index.html
       status: 200
     - source: /Client/*
-      target: /Client/index.html
+      target: /Client/dist/index.html
       status: 200
