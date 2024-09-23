@@ -2,7 +2,7 @@
 import { quiz } from "../assets/data.js";
 import OptionSelection from "../multipleQuestion.jsx";
 import React from "react";
-import {Personality} from "../personalityPage.jsx"
+import { Personality } from "../personalityPage.jsx";
 
 function Quiz() {
   const [user, setUser] = React.useState("");
@@ -64,7 +64,7 @@ function Quiz() {
     }
   };
 
-  console.log(qNum)
+  console.log(qNum);
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center">
       {submit ? (
@@ -96,11 +96,11 @@ function Quiz() {
           <div className="flex gap-4 mt-4 w-full prev-nex">
             <button
               onClick={handleDecrease}
-              className={`${qNum === 0 ? "hidden" : "flex justify-center item-center prev"}`} 
+              className={`${
+                qNum === 0 ? "hidden" : "flex justify-center item-center prev"
+              }`}
             >
-              <span className="material-symbols-outlined" >
-                arrow_back
-              </span>
+              <span className="material-symbols-outlined">arrow_back</span>
               Previous
             </button>
 
@@ -108,9 +108,7 @@ function Quiz() {
               onClick={handleIncrease}
               className={`${qNum === quiz.length - 1 ? "hidden" : "nex"}`}
             >
-              <span className="material-symbols-outlined">
-                arrow_forward
-              </span>
+              <span className="material-symbols-outlined">arrow_forward</span>
               Next
             </button>
           </div>
