@@ -12,7 +12,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: basePath,
+    base: basePath, 
+    publicDir: "public",
     build: {
       outDir: "dist",
       assetsDir: "assets",
