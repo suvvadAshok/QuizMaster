@@ -1,21 +1,13 @@
 //import { quiz } from "./assets/data.js";
-import { quiz } from "../assets/data.jsx";
-import OptionSelection from "../components/multipleQuestion.jsx";
+import { quiz } from "../assets/data.js";
+import OptionSelection from "../multipleQuestion.jsx";
 import React from "react";
-import { Personality } from "../components/personalityPage.jsx";
-import { LeadForm } from "../components/leadForm.jsx";
-import { QuestionSteps } from "../components/questionSteps.jsx";
+import { Personality } from "../personalityPage.jsx";
 
 function Quiz() {
   const [user, setUser] = React.useState("");
   const [qNum, setQNum] = React.useState(0);
-  const [answers, setAnswers] = React.useState({
-    "How do you prepare for exams?": "",
-    "When it comes to CAS (Creativity, Activity, Service), you...": "",
-    "How do you tackle TOK (Theory of Knowledge)?": "",
-    "What's your biggest IB exam tip?": "",
-    "What do you do when you're stressed?": "",
-  });
+  const [answers, setAnswers] = React.useState({});
   const [error, setError] = React.useState("");
   const [submit, setSubmit] = React.useState(true);
 
@@ -31,7 +23,6 @@ function Quiz() {
     }
 
     const ans = Object.values(answers);
-    console.log("ans", ans);
     let max = 0;
     let value = "";
     for (let i = 0; i < ans.length; i++) {
@@ -47,8 +38,6 @@ function Quiz() {
       }
     }
 
-    console.log("user", value);
-
     setUser(value);
 
     console.log("Submitted Answers:", answers);
@@ -62,17 +51,29 @@ function Quiz() {
     }));
   };
 
-  console.log(Object.entries(answers));
+  const handleDecrease = () => {
+    setError("");
+    if (qNum > 0) {
+      setQNum(qNum - 1);
+    }
+  };
+
+  const handleIncrease = () => {
+    if (qNum < quiz.length - 1) {
+      setQNum(qNum + 1);
+    }
+  };
+
+  console.log(qNum);
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient">
+    <div className="h-screen w-screen flex flex-col justify-center items-center">
       {submit ? (
         <>
-          <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
           <div
             key={quiz[qNum].question}
             className={`p-4 fade-in-bottom`}
             style={{
-              animationDelay: `${qNum * 100}ms`,
+              animationDelay: `${qNum * 100}ms`, // Dynamic delay based on question number
             }}
           >
             <OptionSelection
@@ -81,8 +82,6 @@ function Quiz() {
                 handleAnswerChange(quiz[qNum].question, answer)
               }
               selectedAnswer={answers[quiz[qNum].question]}
-              setQNum={setQNum}
-              qNum={qNum}
             />
 
             {error && <p className="text-red-500">{error}</p>}
@@ -93,12 +92,29 @@ function Quiz() {
               </button>
             )}
           </div>
+
+          <div className="flex gap-4 mt-4 w-full prev-nex">
+            <button
+              onClick={handleDecrease}
+              className={`${
+                qNum === 0 ? "hidden" : "flex justify-center item-center prev"
+              }`}
+            >
+              <span className="material-symbols-outlined">arrow_back</span>
+              Previous
+            </button>
+
+            <button
+              onClick={handleIncrease}
+              className={`${qNum === quiz.length - 1 ? "hidden" : "nex"}`}
+            >
+              <span className="material-symbols-outlined">arrow_forward</span>
+              Next
+            </button>
+          </div>
         </>
       ) : (
-        <>
-          <LeadForm />
-          <Personality personality={user} />
-        </>
+        <Personality personality={user} />
       )}
     </div>
   );

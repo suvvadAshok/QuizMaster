@@ -1,9 +1,6 @@
-import { CAS } from "../assets/images/cas";
-
 export const quiz = [
   {
     question: "How do you prepare for exams?",
-    relImg: <CAS />,
     options: [
       {
         option: "Make a color-coded study schedule weeks in advance.",
@@ -25,7 +22,6 @@ export const quiz = [
   },
   {
     question: "When it comes to CAS (Creativity, Activity, Service), you...",
-    relImg: <CAS />,
     options: [
       {
         option: "Plan meaningful activities that align with your career goals.",
@@ -48,7 +44,6 @@ export const quiz = [
   },
   {
     question: "How do you tackle TOK (Theory of Knowledge)?",
-    relImg: <CAS />,
     options: [
       {
         option: "Dive deep into the questions and love analyzing every aspect.",
@@ -71,7 +66,6 @@ export const quiz = [
   },
   {
     question: "What's your biggest IB exam tip?",
-    relImg: <CAS />,
     options: [
       {
         option: "Start early and review often—consistency is key.",
@@ -90,7 +84,6 @@ export const quiz = [
   },
   {
     question: "What do you do when you're stressed?",
-    relImg: <CAS />,
     options: [
       {
         option: "Meditate or go for a run to clear your mind.",
