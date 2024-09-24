@@ -1,13 +1,14 @@
-import planner from "./assets/images/planner.jpeg";
-import lastMinuteGenius from "./assets/images/lastMinuteGenius.jpeg";
-import chillMaster from "./assets/images/chillMaster.jpeg";
-import studyBuddy from "./assets/images/studyBuddy.jpeg";
+import planner from "../assets/images/planner.jpeg";
+import lastMinuteGenius from "../assets/images/lastMinuteGenius.jpeg";
+import chillMaster from "../assets/images/chillMaster.jpeg";
+import studyBuddy from "../assets/images/studyBuddy.jpeg";
 import { FaSquareWhatsapp } from "react-icons/fa6";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { ImLinkedin } from "react-icons/im";
 import { FaTwitterSquare } from "react-icons/fa";
 import { ImFolderDownload } from "react-icons/im";
 import { saveAs } from "file-saver";
+
 
 export const Personality = (personality) => {
   const plannerURL =
@@ -20,6 +21,7 @@ export const Personality = (personality) => {
     "https://blog.luxhospitals.com/wp-content/uploads/2024/09/The-Study-Buddy.jpg";
   let imageUrl = "";
   let imageSrc = "";
+
   console.log(personality.personality);
 
   if (personality.personality === "Planner") {
@@ -42,6 +44,7 @@ export const Personality = (personality) => {
 
   return (
     <div>
+      
       <img src={imageSrc} height="200px" width="200px"></img>
       <div className="flex justify-between">
         <a
