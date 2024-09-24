@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'GT_Walsheim_Pro': ['GT Walsheim Pro', 'sans-serif'],
+      },
+      screens: {
+        'max-sm': { 'max': '475px' }, // Custom breakpoint for max-width 475px
+      },
+    },
   },
   plugins: [],
 }
