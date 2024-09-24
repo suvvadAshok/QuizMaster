@@ -3,7 +3,7 @@ import { quiz } from "../assets/data.jsx";
 import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
 import { Personality } from "../components/personalityPage.jsx";
-import { LeadForm } from "../components/leadForm.jsx";
+// import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 
 function Quiz() {
@@ -96,7 +96,7 @@ function Quiz() {
         </>
       ) : (
         <>
-          <LeadForm />
+          {/* <LeadForm /> */}
           <Personality personality={user} />
         </>
       )}
