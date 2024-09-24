@@ -12,7 +12,7 @@ const OptionSelection = (prop) => {
 
   return (
     <div className="">
-      <div className="flex items-baseline justify-between w-[100vh]">
+      <div className="flex w-full items-baseline justify-between">
         <h3 className="font-semibold text-2xl">{prop.questionData.question}</h3>
         <div className="">{prop.questionData.relImg}</div>
       </div>
