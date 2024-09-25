@@ -12,11 +12,15 @@ const OptionSelection = (prop) => {
 
   return (
     <div className="">
-      <div className="flex w-full items-baseline justify-between">
-        <h3 className="font-semibold text-2xl">{prop.questionData.question}</h3>
+      <div className="flex w-full  justify-between">
+        <div className="flex items-end mb-8">
+          <h3 className="font-semibold text-2xl">
+            {prop.questionData.question}
+          </h3>
+        </div>
         <div className="">{prop.questionData.relImg}</div>
       </div>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1">
         {prop.questionData.options.map((i) => (
           <motion.div
             key={i.option}
