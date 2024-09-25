@@ -63,7 +63,7 @@ function Quiz() {
     }));
   };
 
-  console.log(Object.entries(answers));
+  console.log(user);
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient">
       {submit ? (
