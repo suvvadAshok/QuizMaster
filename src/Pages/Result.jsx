@@ -27,7 +27,7 @@ function Result() {
                <h4 className='text-2xl font-bold'> {person} </h4>
                <p>You’re the type of student</p>
             </div>
-            <div className='grid grid-cols-2 gap-2.5'>
+            <div className='grid grid-cols-2 gap-2.5 max-sm:grid-cols-1'>
   {persons.map((person, index) => (
     <li key={index} className=" font-bold">
       {person}
