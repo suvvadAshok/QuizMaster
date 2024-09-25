@@ -5,12 +5,18 @@ import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
 import { Personality } from "../components/personalityPage.jsx";
 // import { LeadForm } from "../components/leadForm.jsx";
-// import curve from "../assets/images/ontopCurve.svg";
+import { QuestionSteps } from "../components/questionSteps.jsx";
 
 function Quiz() {
   const [user, setUser] = React.useState("");
   const [qNum, setQNum] = React.useState(0);
-  const [answers, setAnswers] = React.useState({});
+  const [answers, setAnswers] = React.useState({
+    "How do you prepare for exams?": "",
+    "When it comes to CAS (Creativity, Activity, Service), you...": "",
+    "How do you tackle TOK (Theory of Knowledge)?": "",
+    "What's your biggest IB exam tip?": "",
+    "What do you do when you're stressed?": "",
+  });
   const [error, setError] = React.useState("");
   const [submit, setSubmit] = React.useState(true);
 
@@ -57,23 +63,12 @@ function Quiz() {
     }));
   };
 
+  console.log(Object.entries(answers));
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
-      {/* <img src={curve} alt="" className="relative" /> */}
-
+    <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient">
       {submit ? (
         <>
-          <div className={`flex gap-4`}>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <button
-                key={i}
-                onClick={() => setQNum(i - 1)}
-                className="rounded-[50%] border-2 border-black p-4"
-              >
-                {i}
-              </button>
-            ))}
-          </div>
+          <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
           <div
             key={quiz[qNum].question}
             className={`p-4 fade-in-bottom`}
@@ -87,6 +82,8 @@ function Quiz() {
                 handleAnswerChange(quiz[qNum].question, answer)
               }
               selectedAnswer={answers[quiz[qNum].question]}
+              setQNum={setQNum}
+              qNum={qNum}
             />
 
             {error && <p className="text-red-500">{error}</p>}
