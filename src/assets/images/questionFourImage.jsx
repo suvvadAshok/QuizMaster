@@ -1,8 +1,14 @@
-export function QuestionFourImage() {
+import PropTypes from "prop-types";
+
+QuestionFourImage.propTypes = {
+  heigth: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+};
+export function QuestionFourImage({ heigth = "250", width = "458" }) {
   return (
     <svg
-      width="458"
-      height="238"
+      width={width}
+      height={heigth}
       viewBox="0 0 458 238"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

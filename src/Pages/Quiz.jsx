@@ -3,7 +3,7 @@ import { quiz } from "../assets/data.jsx";
 import { Link } from "react-router-dom";
 import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
-import { Personality } from "../components/personalityPage.jsx";
+// import { Personality } from "../components/personalityPage.jsx";
 import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 
@@ -63,7 +63,7 @@ function Quiz() {
     }));
   };
 
-  console.log(Object.entries(answers));
+  console.log(user);
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient">
       {submit ? (

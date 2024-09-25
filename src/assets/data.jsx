@@ -1,7 +1,7 @@
 import { QuestionOneImage } from "../assets/images/questionOneImage";
 import { QuestionTwoImage } from "../assets/images/questionTwoImage";
 import { QuestionThreeImage } from "../assets/images/questionThreeImage";
-import { QuestionFourImage } from "../assets/images/QuestionFourImage";
+import { QuestionFourImage } from "../assets/images/questionFourImage";
 import { QuestionFiveImage } from "../assets/images/questionFiveImage";
 
 export const quiz = [
