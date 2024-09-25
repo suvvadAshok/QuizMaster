@@ -1,20 +1,23 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export function LeadForm() {
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://script.google.com/macros/s/AKfycbyV1eNsz-XV7goztFAQPgC1Rk98dZ2lPbURSN0f2wH6eeUetI6cPCxzXeivD8FrKN49Pg/exec",
+        "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
         {
-          name: "ashok kumar",
-          phone: "6305749515",
+          Name: e.target.name.value,
+          Phone: e.target.phone.value,
         },
         {
           headers: { "Content-Type": "application/json" },
         }
       );
       console.log("Response:", response.data);
+      navigate("/result");
     } catch (error) {
       console.error("Error:", error);
     }

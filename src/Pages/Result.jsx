@@ -1,8 +1,4 @@
-function Result  () {
-    return(
-        <>
-        Result is here
-        </>
-    )
+function Result() {
+  return <>Result is here</>;
 }
 export default Result;

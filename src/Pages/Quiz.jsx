@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
 import { Personality } from "../components/personalityPage.jsx";
-// import { LeadForm } from "../components/leadForm.jsx";
+import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 
 function Quiz() {
@@ -89,18 +89,17 @@ function Quiz() {
             {error && <p className="text-red-500">{error}</p>}
 
             {qNum === quiz.length - 1 && (
-              <Link to="/result" >
-              <button type="submit" id="submit-here" onClick={handleSubmit}>
-                Submit
-              </button>
+              <Link to="/result">
+                <button type="submit" id="submit-here" onClick={handleSubmit}>
+                  Submit
+                </button>
               </Link>
             )}
           </div>
         </>
       ) : (
         <>
-          {/* <LeadForm /> */}
-          <Personality personality={user} />
+          <LeadForm />
         </>
       )}
     </div>
