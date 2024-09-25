@@ -1,8 +1,15 @@
-export function QuestionFiveImage() {
+import PropTypes from "prop-types";
+
+QuestionFiveImage.propTypes = {
+  heigth: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+};
+
+export function QuestionFiveImage({ heigth = "250", width = "238" }) {
   return (
     <svg
-      width="238"
-      height="346"
+      width={width}
+      height={heigth}
       viewBox="0 0 238 346"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
