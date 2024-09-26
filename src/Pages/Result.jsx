@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import { Personality } from "../components/personalityPage";
-import { DataGen } from "../components/dataFromChatGpt";
 
 function Result() {
   const location = useLocation();
@@ -41,7 +40,6 @@ function Result() {
       </div>
       <div className="result-profile-card">
         <Personality user={user} />
-        <DataGen />
       </div>
     </section>
   );
