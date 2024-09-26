@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 
 OnTopCurve.propTypes = {
   qNum: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
 
-export function OnTopCurve({ qNum }) {
+export function OnTopCurve({ qNum, className }) {
   let path = 0;
   if (qNum === 0) {
     path = 0.1;
@@ -29,7 +30,7 @@ export function OnTopCurve({ qNum }) {
     },
   };
   return (
-    <svg width="100vw" viewBox="0 0 1728 191" fill="none">
+    <svg width="100vw" viewBox="0 0 1728 191" fill="none" className={className}>
       <motion.path
         variants={icon}
         initial="visible"

@@ -30,10 +30,6 @@ const HomePage = () => {
 
   return (
     <section className="w-full h-auto max-w-screen-xl mx-auto pt-[100px] pb-[100px] relative max-sm:px-5 bg-custom-gradient">
-      {/* <div class="gradient-bg-box"></div>
-      <div class="gradient-bg-one"></div>
-      <div class="gradient-bg-two"></div> */}
-
       <div className="absolute top-25 right-20 max-sm:right-4 max-sm:top-4">
         <img
           src={Logo[0]}
@@ -111,27 +107,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-{
-  /*<div className="cards-container relative flex gap-5 justify-start overflow-x-auto flex-nowrap max-sm:px-0">
-  <div className="card ">
-    <img src={skateboard} alt="Skateboard" className="w-full h-auto rounded-lg" />
-    <p className="mt-2 text-center">Cool Under Pressure</p>
-  </div>
-
-  <div className="card">
-    <img src={Ace} alt="Skateboard" className="w-full h-auto rounded-lg" />
-    <p className="mt-2 text-center">Aces Every Subject</p>
-  </div>
-
-  <div className="card ">
-    <img src={Balance} alt="Skateboard" className="w-full h-auto rounded-lg" />
-    <p className="mt-2 text-center">Balances Everything</p>
-  </div>
-
-  <div className="card">
-    <img src={architect} alt="Skateboard" className="w-full h-auto rounded-lg" />
-    <p className="mt-2 text-center">Architecture</p>
-  </div>
-</div> */
-}
