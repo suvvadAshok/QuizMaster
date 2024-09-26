@@ -11,20 +11,20 @@ const OptionSelection = (prop) => {
   };
 
   return (
-    <div className="">
-      <div className="flex w-full  justify-between">
-        <div className="flex items-end mb-8">
-          <h3 className="font-semibold text-2xl">
+    <div className="w-full">
+      <div className="flex w-full flex-row-reverse max-sm:flex-col sm:justify-between">
+        <div className="">{prop.questionData.relImg}</div>
+        <div className="flex items-end mb-8 max-sm:mb-4">
+          <h3 className="font-semibold text-2xl max-sm:text-xl">
             {prop.questionData.question}
           </h3>
         </div>
-        <div className="">{prop.questionData.relImg}</div>
       </div>
       <div className="grid md:grid-cols-2 gap-2 sm:grid-cols-1">
         {prop.questionData.options.map((i) => (
           <motion.div
             key={i.option}
-            className={`option-card rounded-xl bg-[#FFFFFFA8] p-5 border-[1px] border-[#FFFFFFA8]  ${
+            className={`rounded-xl bg-[#FFFFFFA8] p-5 max-sm:p-2 max-sm:rounded-lg border-[1px] border-[#FFFFFFA8]  ${
               prop.selectedAnswer === i.label ? "selected" : ""
             }`}
             initial={{ opacity: 0, scale: 0.5, y: -50 }}

@@ -4,7 +4,7 @@ QuestionFourImage.propTypes = {
   heigth: PropTypes.string.isRequired,
   width: PropTypes.string.isRequired,
 };
-export function QuestionFourImage({ heigth = "250", width = "458" }) {
+export function QuestionFourImage({ heigth = "250", width = "400" }) {
   return (
     <svg
       width={width}
