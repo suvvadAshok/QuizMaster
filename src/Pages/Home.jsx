@@ -102,7 +102,7 @@ const HomePage = () => {
         >
           <p className="px-6 pb-3 pt-3 bg-[#fbbd2d] w-32 text-right text-black font-500 rounded-xl max-sm:w-full max-sm:text-center max-sm:py-4 no-underline">
             {" "}
-            Let's start{" "}
+            Let&rsquo;s start{" "}
           </p>
         </Link>
       </div>
