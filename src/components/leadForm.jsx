@@ -11,6 +11,8 @@ export function LeadForm() {
         {
           Name: e.target.name.value,
           Phone: e.target.phone.value,
+          Grade: e.target.grade.value,
+          School: e.target.school.value,
         },
         {
           headers: { "Content-Type": "application/json" },
@@ -24,12 +26,39 @@ export function LeadForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input type="text" name="name" id="name" />
-      <label htmlFor="phone">Phone Number</label>
-      <input type="text" name="phone" id="phone" />
-      <button type="submit">Submit</button>
+    <form
+      onSubmit={handleSubmit}
+      className="font-GT_Walsheim_Pro text-lg flex flex-col gap-4 "
+    >
+      {formData.map((field) => (
+        <div className="flex flex-col w-96 gap-2" key={field.id}>
+          <label htmlFor={field.id} className="text-2xl">
+            {field.label}
+          </label>
+          <input
+            required={field.required}
+            type={field.type}
+            name={field.id}
+            id={field.id}
+            className="w-full rounded-lg border-[0.5px] border-gray-400 p-3 outline-none focus:border-gray-600 focus:border-2  duration-100 delay-75 ease-in-out"
+          />
+        </div>
+      ))}
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          className="bg-black text-white rounded-lg py-4 px-6 text-xl hover:scale-110 delay-75 ease-out duration-150"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   );
 }
+
+const formData = [
+  { label: "Name", required: true, type: "text", id: "name" },
+  { label: "Phone Number", required: true, type: "text", id: "phone" },
+  { label: "Grade", required: true, type: "text", id: "grade" },
+  { label: "School Name", required: true, type: "text", id: "school" },
+];
