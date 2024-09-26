@@ -34,7 +34,7 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
           >
             <QuestionOne
               fill={able[0] === "notAble" ? "#fff" : "#FBC02D"}
-              stroke={able[0] === "notAble" ? "#FBC02D" : "#fff"}
+              stroke={able[0] === "notAble" ? "#00000036" : "#fff"}
             />
           </button>
           <button
@@ -44,7 +44,7 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
           >
             <QuestionTwo
               fill={able[1] === "notAble" ? "#fff" : "#FBC02D"}
-              stroke={able[1] === "notAble" ? "#FBC02D" : "#fff"}
+              stroke={able[1] === "notAble" ? "#00000036" : "#fff"}
             />
           </button>
           <button
@@ -54,7 +54,7 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
           >
             <QuestionThree
               fill={able[2] === "notAble" ? "#fff" : "#FBC02D"}
-              stroke={able[2] === "notAble" ? "#FBC02D" : "#fff"}
+              stroke={able[2] === "notAble" ? "#00000036" : "#fff"}
             />
           </button>
           <button
@@ -63,8 +63,8 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
             className="absolute bottom-[76%] right-[25%] "
           >
             <QuestionFour
-              fill={able[2] === "notAble" ? "#fff" : "#FBC02D"}
-              stroke={able[2] === "notAble" ? "#FBC02D" : "#fff"}
+              fill={able[3] === "notAble" ? "#fff" : "#FBC02D"}
+              stroke={able[3] === "notAble" ? "#00000036" : "#fff"}
             />
           </button>
           <button
@@ -73,8 +73,8 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
             className="absolute top-[40%] right-[8%] "
           >
             <QuestionFive
-              fill={able[2] === "notAble" ? "#fff" : "#FBC02D"}
-              stroke={able[2] === "notAble" ? "#FBC02D" : "#fff"}
+              fill={able[4] === "notAble" ? "#fff" : "#FBC02D"}
+              stroke={able[4] === "notAble" ? "#00000036" : "#fff"}
             />
           </button>
         </div>
