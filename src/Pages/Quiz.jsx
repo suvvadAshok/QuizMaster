@@ -6,6 +6,8 @@ import React from "react";
 // import { Personality } from "../components/personalityPage.jsx";
 import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
+import { BottomQuestionSteps } from "../components/bottomQuestionStep.jsx";
+
 
 function Quiz() {
   const [user, setUser] = React.useState("");
@@ -47,13 +49,8 @@ function Quiz() {
         value = ans[i];
       }
     }
-
-    console.log("user", value);
-
     setUser(value);
-
     console.log("Submitted Answers:", answers);
-    // alert("Quiz submitted! Check the console for your answers.");
   };
 
   const handleAnswerChange = (question, answer) => {
@@ -72,9 +69,9 @@ function Quiz() {
           <div
             key={quiz[qNum].question}
             className={`p-4 fade-in-bottom`}
-            style={{
-              animationDelay: `${qNum * 100}ms`,
-            }}
+            // style={{
+            //   animationDelay: `${qNum * 100}ms`,
+            // }}
           >
             <OptionSelection
               questionData={quiz[qNum]}
@@ -95,11 +92,17 @@ function Quiz() {
                 </button>
               </Link>
             )}
+
+            <BottomQuestionSteps
+              setQNum={setQNum}
+              qNum={qNum}
+              answers={answers}
+            />
           </div>
         </>
       ) : (
         <>
-          <LeadForm />
+          <LeadForm user={user} />
         </>
       )}
     </div>

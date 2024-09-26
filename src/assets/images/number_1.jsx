@@ -3,13 +3,21 @@ import PropTypes from "prop-types";
 QuestionOne.propTypes = {
   fill: PropTypes.string.isRequired,
   stroke: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
-export function QuestionOne({ fill, stroke }) {
+export function QuestionOne({ fill, stroke, className }) {
   return (
-    <svg width="75" height="75" viewBox="0 0 152 152">
+    <svg viewBox="0 0 152 152" className={className}>
       <g opacity="1">
-        <circle cx="77" cy="77" r="75" fill={fill} stroke={stroke} className="transition-all" />
+        <circle
+          cx="77"
+          cy="77"
+          r="75"
+          fill={fill}
+          stroke={stroke}
+          className="transition-all"
+        />
         <circle
           cx="77"
           cy="77"

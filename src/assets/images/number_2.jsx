@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 QuestionTwo.propTypes = {
   fill: PropTypes.string.isRequired,
   stroke: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
-export function QuestionTwo({ fill, stroke }) {
+export function QuestionTwo({ fill, stroke, className }) {
   console.log(fill);
   return (
-    <svg width="75" height="75" viewBox="0 0 152 152">
+    <svg viewBox="0 0 152 152" className={className}>
       <g opacity="1">
         <circle cx="77" cy="77" r="75" fill={fill} stroke={stroke} />
         <circle

@@ -1,7 +1,12 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export function LeadForm() {
+LeadForm.propTypes = {
+  user: PropTypes.string,
+};
+
+export function LeadForm({ user }) {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,19 +24,20 @@ export function LeadForm() {
         }
       );
       console.log("Response:", response.data);
-      navigate("/result");
+      navigate("/result", { state: { user } });
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
+  console.log(user, "user in form");
   return (
     <form
       onSubmit={handleSubmit}
       className="font-GT_Walsheim_Pro text-lg flex flex-col gap-4 "
     >
       {formData.map((field) => (
-        <div className="flex flex-col w-96 gap-2" key={field.id}>
+        <div className="flex flex-col w-96 gap-[0.5]" key={field.id}>
           <label htmlFor={field.id} className="text-2xl">
             {field.label}
           </label>
@@ -40,7 +46,7 @@ export function LeadForm() {
             type={field.type}
             name={field.id}
             id={field.id}
-            className="w-full rounded-lg border-[0.5px] border-gray-400 p-3 outline-none focus:border-gray-600 focus:border-2  duration-100 delay-75 ease-in-out"
+            className="w-full rounded-xl border-[0.5px] border-gray-400 p-3 outline-none focus:border-gray-600 focus:border-2  duration-100 delay-75 ease-in-out"
           />
         </div>
       ))}
