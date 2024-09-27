@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 QuestionTwoImage.propTypes = {
   heigth: PropTypes.string.isRequired,
   width: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
-export function QuestionTwoImage({ heigth = "250", width = "378" }) {
+export function QuestionTwoImage({ heigth = "250", width = "378", className }) {
   return (
     <svg
       width={width}
       height={heigth}
       viewBox="0 0 378 325"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g clipPath="url(#clip0_6_42)">
         <path
