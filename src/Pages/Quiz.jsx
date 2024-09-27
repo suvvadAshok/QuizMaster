@@ -61,13 +61,13 @@ function Quiz() {
 
   console.log(user);
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2 ">
+    <div className="h-screen w-screen overflow-y-auto overflow-x-hidden no-scrollbar  flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2">
       {submit ? (
         <>
           <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
           <div
             key={quiz[qNum].question}
-            className={`p-4 fade-in-bottom max-md:p-2`}
+            className="flex justify-center items-center flex-col"
           >
             <OptionSelection
               questionData={quiz[qNum]}
@@ -81,9 +81,13 @@ function Quiz() {
 
             {error && <p className="text-red-500">{error}</p>}
 
-            {qNum === quiz.length - 1 && (
+            {Object.values(answers).length === 5 && (
               <Link to="/result">
-                <button type="submit" id="submit-here" onClick={handleSubmit}>
+                <button
+                  type="submit"
+                  onClick={handleSubmit}
+                  className="py-3 px-10 text-white bg-black rounded-xl mt-4 shadow-md hover:shadow-xl text-lg font-medium  duration-100 transition-colors hover:transform hover:scale-110"
+                >
                   Submit
                 </button>
               </Link>
