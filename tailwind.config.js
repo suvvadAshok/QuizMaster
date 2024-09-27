@@ -2,6 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: "400px",
+      md: "550px",
+      lg: "1024px",
+      xl: "1280px",
+      xxl: "1440px",
+    },
     extend: {
       fontFamily: {
         GT_Walsheim_Pro: ["GT Walsheim Pro", "sans-serif"],

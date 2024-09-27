@@ -23,7 +23,7 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
   console.log(qNum);
 
   return (
-    <div className="relative max-sm:hidden">
+    <div className="relative max-md:hidden">
       <OnTopCurve qNum={qNum} className={"w-full"} />
       <div>
         <button

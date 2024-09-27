@@ -8,7 +8,6 @@ import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 import { BottomQuestionSteps } from "../components/bottomQuestionStep.jsx";
 
-
 function Quiz() {
   const [user, setUser] = React.useState("");
   const [qNum, setQNum] = React.useState(0);
@@ -62,16 +61,13 @@ function Quiz() {
 
   console.log(user);
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient">
+    <div className="h-screen w-screen flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2 ">
       {submit ? (
         <>
           <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
           <div
             key={quiz[qNum].question}
-            className={`p-4 fade-in-bottom`}
-            // style={{
-            //   animationDelay: `${qNum * 100}ms`,
-            // }}
+            className={`p-4 fade-in-bottom max-md:p-2`}
           >
             <OptionSelection
               questionData={quiz[qNum]}

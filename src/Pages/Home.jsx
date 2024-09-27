@@ -30,7 +30,7 @@ const HomePage = () => {
 
   return (
     <section className="w-full h-auto max-w-screen-xl mx-auto pt-[100px] pb-[100px] relative max-sm:px-5 bg-custom-gradient">
-      <div className="absolute top-25 right-20 max-sm:right-4 max-sm:top-4">
+      <div className="absolute top-25 right-20 max-md:right-4 max-md:top-4">
         <img
           src={Logo[0]}
           className="w-52 h-20 object-contain max-sm:w-22 max-sm:h-10"

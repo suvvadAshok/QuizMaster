@@ -22,44 +22,42 @@ export function BottomQuestionSteps({ setQNum, qNum, answers }) {
   console.log(qNum);
 
   return (
-    <div className="mt-4 sm:hidden">
-      <div>
-        <button disabled={able[0] === "notAble"} onClick={() => setQNum(0)}>
-          <QuestionOne
-            className={"h-12 w-12"}
-            fill={able[0] === "notAble" ? "#fff" : "#FBC02D"}
-            stroke={able[0] === "notAble" ? "#00000036" : "#fff"}
-          />
-        </button>
-        <button disabled={able[1] === "notAble"} onClick={() => setQNum(1)}>
-          <QuestionTwo
-            className={"h-12 w-12"}
-            fill={able[1] === "notAble" ? "#fff" : "#FBC02D"}
-            stroke={able[1] === "notAble" ? "#00000036" : "#fff"}
-          />
-        </button>
-        <button disabled={able[2] === "notAble"} onClick={() => setQNum(2)}>
-          <QuestionThree
-            className={"h-12 w-12"}
-            fill={able[2] === "notAble" ? "#fff" : "#FBC02D"}
-            stroke={able[2] === "notAble" ? "#00000036" : "#fff"}
-          />
-        </button>
-        <button disabled={able[3] === "notAble"} onClick={() => setQNum(3)}>
-          <QuestionFour
-            className={"h-12 w-12"}
-            fill={able[3] === "notAble" ? "#fff" : "#FBC02D"}
-            stroke={able[3] === "notAble" ? "#00000036" : "#fff"}
-          />
-        </button>
-        <button disabled={able[4] === "notAble"} onClick={() => setQNum(4)}>
-          <QuestionFive
-            className={"h-12 w-12"}
-            fill={able[4] === "notAble" ? "#fff" : "#FBC02D"}
-            stroke={able[4] === "notAble" ? "#00000036" : "#fff"}
-          />
-        </button>
-      </div>
+    <div className="mt-4 md:hidden">
+      <button disabled={able[0] === "notAble"} onClick={() => setQNum(0)}>
+        <QuestionOne
+          className={"h-12 w-12"}
+          fill={able[0] === "notAble" ? "#fff" : "#FBC02D"}
+          stroke={able[0] === "notAble" ? "#00000036" : "#fff"}
+        />
+      </button>
+      <button disabled={able[1] === "notAble"} onClick={() => setQNum(1)}>
+        <QuestionTwo
+          className={"h-12 w-12"}
+          fill={able[1] === "notAble" ? "#fff" : "#FBC02D"}
+          stroke={able[1] === "notAble" ? "#00000036" : "#fff"}
+        />
+      </button>
+      <button disabled={able[2] === "notAble"} onClick={() => setQNum(2)}>
+        <QuestionThree
+          className={"h-12 w-12"}
+          fill={able[2] === "notAble" ? "#fff" : "#FBC02D"}
+          stroke={able[2] === "notAble" ? "#00000036" : "#fff"}
+        />
+      </button>
+      <button disabled={able[3] === "notAble"} onClick={() => setQNum(3)}>
+        <QuestionFour
+          className={"h-12 w-12"}
+          fill={able[3] === "notAble" ? "#fff" : "#FBC02D"}
+          stroke={able[3] === "notAble" ? "#00000036" : "#fff"}
+        />
+      </button>
+      <button disabled={able[4] === "notAble"} onClick={() => setQNum(4)}>
+        <QuestionFive
+          className={"h-12 w-12"}
+          fill={able[4] === "notAble" ? "#fff" : "#FBC02D"}
+          stroke={able[4] === "notAble" ? "#00000036" : "#fff"}
+        />
+      </button>
     </div>
   );
 }
