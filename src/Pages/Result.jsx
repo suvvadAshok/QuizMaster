@@ -1,5 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { Personality } from "../components/personalityPage";
+// import { Planner } from "../assets/images/planner";
+// import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
+// import plannerIcon from "../assets/images/plannerIcon.svg";
 
 function Result() {
   const location = useLocation();
@@ -16,7 +19,7 @@ function Result() {
 
   console.log(user, "user in result page");
   return (
-    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center">
+    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center max-md:flex-col">
       <div className="result-card">
         <div className="grid grid-cols-1 gap-y-3">
           <h4 className="text-2xl font-bold"> {person} </h4>
@@ -46,3 +49,30 @@ function Result() {
 }
 
 export default Result;
+
+// const reasultData = [
+//   {
+//     user: "The Planner",
+//     userImg: <Planner />,
+//     keywords: [
+//       "Loves structure",
+//       "Ace every challange",
+//       "Plan Ahead",
+//       "Well organised",
+//       "Does not Miss Deadlines",
+//     ],
+//     userIcon: plannerIcon,
+//   },
+//   {
+//     user: "The Last Minute Genius",
+//     userImg: <LastMinuteGenius />,
+//     keywords: [
+//       "Loves structure",
+//       "Ace every challange",
+//       "Plan Ahead",
+//       "Well organised",
+//       "Does not Miss Deadlines",
+//     ],
+//     userIcon: plannerIcon,
+//   },
+// ];

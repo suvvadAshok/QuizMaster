@@ -81,7 +81,7 @@ function Quiz() {
 
             {error && <p className="text-red-500">{error}</p>}
 
-            {Object.values(answers).length === 5 && (
+            {Object.values(answers).every((value) => value !== "") && (
               <Link to="/result">
                 <button
                   type="submit"
