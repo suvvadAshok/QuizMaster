@@ -11,36 +11,38 @@ const OptionSelection = (prop) => {
   };
 
   return (
-    <div className="w-full">
-      <div className="flex w-full flex-row-reverse max-lg:flex-col sm:justify-between">
+    <>
+      <div className="flex w-full flex-row-reverse max-lg:flex-col sm:justify-between max-md:max-w-[90%]">
         <div className="flex justify-center items-center">
           {prop.questionData.relImg}
         </div>
-        <div className="flex items-end mb-8 max-sm:mb-4">
-          <h3 className="font-semibold text-2xl max-sm:text-xl">
+        <div className="flex items-end mb-8 max-sm:mb-2">
+          <h3 className="font-semibold text-2xl max-sm:text-base">
             {prop.questionData.question}
           </h3>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-4 sm:grid-cols-1">
-        {prop.questionData.options.map((i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4 max-sm:max-w-[90%]">
+        {prop.questionData.options.map((option) => (
           <motion.div
-            key={i.option}
-            className={`rounded-xl bg-[#FFFFFFA8] p-5 max-sm:p-2 max-sm:rounded-lg border-[1px] border-[#FFFFFFA8] shadow-md hover:shadow-xl  ${
-              prop.selectedAnswer === i.label ? "border-[#3f80fd] border-2" : ""
+            key={option.label}
+            className={`p-2 sm:p-4 rounded-lg sm:rounded-xl bg-white/90 border-2 shadow-md hover:shadow-xl transition-all duration-300 ${
+              prop.selectedAnswer === option.label
+                ? "border-[#3f80fd]"
+                : "border-transparent"
             }`}
             initial={{ opacity: 0, scale: 0.5, y: -50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            onClick={() => handleOptionChange(i.label)}
+            onClick={() => handleOptionChange(option.label)}
           >
-            <label className="text-xl">
-              <p>{i.option}</p>
+            <label>
+              <p>{option.option}</p>
             </label>
           </motion.div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

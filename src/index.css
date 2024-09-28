@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 @font-face {
   font-family: "GT Walsheim Pro";
   src: url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.eot"); /* IE9 */
@@ -65,7 +77,7 @@ body {
   font-family: "GT Walsheim Pro", sans-serif;
   font-weight: 400;
 
-/* 
+  /* 
   background: linear-gradient(
     121.25deg,
     #ffffff -3.14%,
@@ -358,7 +370,7 @@ p {
   padding: 24px 36px;
   flex-shrink: 0;
 }
-.result-card{
+.result-card {
   width: 600px;
   height: 400px;
   border-radius: 18px;
@@ -366,16 +378,16 @@ p {
   padding: 36px 62px;
   flex-shrink: 1;
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 24px;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 24px;
 }
 @media (max-width: 475px) {
   .card {
     width: 100% !important;
     height: 400px !important;
   }
-  .result-card{
+  .result-card {
     width: 100%;
     padding: 26px 20px;
   }
