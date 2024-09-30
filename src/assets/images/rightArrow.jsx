@@ -1,8 +1,13 @@
-export function RightArrow() {
+import PropTypes from "prop-types";
+
+RightArrow.propTypes = {
+  className: PropTypes.string,
+};
+
+export function RightArrow({ className }) {
   return (
     <svg
-      width="28"
-      height="24"
+      className={className}
       viewBox="0 0 28 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
