@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 // import { Personality } from "../components/personalityPage";
 import { Planner } from "../assets/images/planner";
 import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
@@ -8,16 +8,14 @@ import plannerIcon from "../assets/images/plannerIcon.svg";
 import lastMinuteGeniusIcon from "../assets/images/lastMinuteGeniusIcon.svg";
 import studyBuddyIcon from "../assets/images/studyBuddyIcon.svg";
 import chillMasterIcon from "../assets/images/chillMasterIcon.svg";
+import { useAtom } from "jotai";
+import { userAtom } from "../atom.js";
 
 function Result() {
-  const location = useLocation();
-  const { user } = location.state || {};
+  const [user] = useAtom(userAtom);
 
   const userData = resultData.find((data) => data.user.includes(user));
 
-  console.log(userData);
-
-  console.log(user, "user in result page");
   return (
     <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient">
       <div className="flex max-md:flex-col justify-center items-center h-full">
