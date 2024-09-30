@@ -17,7 +17,7 @@ export const quiz = [
       },
       {
         option: "Wing it the night before with some caffeine.",
-        label: "Last-Minute Genius",
+        label: "Last Minute Genius",
       },
       {
         option: "Study with friends and quiz each other.",
@@ -41,7 +41,7 @@ export const quiz = [
       },
       {
         option: "Sign up for last-minute projects to get it done quickly.",
-        label: "Last-Minute Genius",
+        label: "Last Minute Genius",
       },
       {
         option:
@@ -67,7 +67,7 @@ export const quiz = [
       {
         option:
           "Write the essay in one go after watching a few YouTube videos.",
-        label: "Last-Minute Genius",
+        label: "Last Minute Genius",
       },
       {
         option: "Discuss TOK concepts with friends over coffee.",
@@ -91,7 +91,7 @@ export const quiz = [
       },
       {
         option: "Focus on key concepts and practice past papers last minute.",
-        label: "Last-Minute Genius",
+        label: "Last Minute Genius",
       },
       { option: "Study with friends and make it fun.", label: "Study Buddy" },
       {
@@ -112,7 +112,7 @@ export const quiz = [
       },
       {
         option: "Binge-watch a TV show until I forget about the stress.",
-        label: "Last-Minute Genius",
+        label: "Last Minute Genius",
       },
       { option: "Call a friend and vent for a while.", label: "Study Buddy" },
       {

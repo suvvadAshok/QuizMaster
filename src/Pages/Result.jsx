@@ -1,48 +1,45 @@
-import { Link, useLocation } from "react-router-dom";
-import { Personality } from "../components/personalityPage";
-// import { Planner } from "../assets/images/planner";
-// import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
-// import plannerIcon from "../assets/images/plannerIcon.svg";
+import { useLocation } from "react-router-dom";
+// import { Personality } from "../components/personalityPage";
+import { Planner } from "../assets/images/planner";
+import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
+import { StudyBuddy } from "../assets/images/studyBuddy";
+import { ChillMaster } from "../assets/images/chillMaster";
+import plannerIcon from "../assets/images/plannerIcon.svg";
+import lastMinuteGeniusIcon from "../assets/images/lastMinuteGeniusIcon.svg";
+import studyBuddyIcon from "../assets/images/studyBuddyIcon.svg";
+import chillMasterIcon from "../assets/images/chillMasterIcon.svg";
 
 function Result() {
   const location = useLocation();
   const { user } = location.state || {};
 
-  const person = ["The Planner"];
-  const persons = [
-    "Loves structure",
-    "Ace every challange",
-    "Plan Ahead",
-    "Well organised",
-    "Does not Miss Deadlines",
-  ];
+  const userData = resultData.find((data) => data.user.includes(user));
+
+  console.log(userData);
 
   console.log(user, "user in result page");
   return (
-    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center max-md:flex-col">
-      <div className="result-card">
-        <div className="grid grid-cols-1 gap-y-3">
-          <h4 className="text-2xl font-bold"> {person} </h4>
-          <p>You’re the type of student</p>
+    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient">
+      <div className="flex max-md:flex-col justify-center items-center h-full">
+        <div className="bg-white rounded-xl p-8 w-[50%] max-md:w-[90%] flex flex-col gap-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-xl font-semibold">{userData.user}</p>
+              <p className="text-lg font-medium">You’re the type of student</p>
+            </div>
+            <div>
+              <img src={userData.userIcon} alt="" className="h-10 w-10" />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
+            {userData.keywords.map((i) => (
+              <p key={i} className="font-semibold text-nowrap max-sm:text-wrap">
+                {i}
+              </p>
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-2 gap-2.5 max-sm:grid-cols-1">
-          {persons.map((person, index) => (
-            <li key={index} className=" font-bold">
-              {person}
-            </li>
-          ))}
-        </div>
-        <Link
-          to="/"
-          className="text-white-500 w-1/2 flex justify-start max-sm:w-full no-underline"
-        >
-          <p className="px-6 pb-3 pt-3 bg-[#fbbd2d] w-50 text-left text-black font-500 rounded-xl max-sm:w-full max-sm:text-center max-sm:py-4 no-underline">
-            What next ?
-          </p>
-        </Link>
-      </div>
-      <div className="result-profile-card">
-        <Personality user={user} />
+        {userData.userImg}
       </div>
     </section>
   );
@@ -50,29 +47,61 @@ function Result() {
 
 export default Result;
 
-// const reasultData = [
-//   {
-//     user: "The Planner",
-//     userImg: <Planner />,
-//     keywords: [
-//       "Loves structure",
-//       "Ace every challange",
-//       "Plan Ahead",
-//       "Well organised",
-//       "Does not Miss Deadlines",
-//     ],
-//     userIcon: plannerIcon,
-//   },
-//   {
-//     user: "The Last Minute Genius",
-//     userImg: <LastMinuteGenius />,
-//     keywords: [
-//       "Loves structure",
-//       "Ace every challange",
-//       "Plan Ahead",
-//       "Well organised",
-//       "Does not Miss Deadlines",
-//     ],
-//     userIcon: plannerIcon,
-//   },
-// ];
+const resultData = [
+  {
+    user: "The Planner",
+    userImg: (
+      <Planner className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+    ),
+    keywords: [
+      "Loves structure",
+      "Ace every challange",
+      "Plan Ahead",
+      "Well organised",
+      "Does not Miss Deadlines",
+    ],
+    userIcon: plannerIcon,
+  },
+  {
+    user: "The Last Minute Genius",
+    userImg: (
+      <LastMinuteGenius className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+    ),
+    keywords: [
+      "Loves structure",
+      "Ace every challange",
+      "Plan Ahead",
+      "Well organised",
+      "Does not Miss Deadlines",
+    ],
+    userIcon: lastMinuteGeniusIcon,
+  },
+  {
+    user: "The Study Buddy",
+    userImg: (
+      <StudyBuddy className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+    ),
+    keywords: [
+      "Loves structure",
+      "Ace every challange",
+      "Plan Ahead",
+      "Well organised",
+      "Does not Miss Deadlines",
+    ],
+    userIcon: studyBuddyIcon,
+  },
+  {
+    user: "The Chill Master",
+    userImg: (
+      <ChillMaster className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+    ),
+    keywords: [
+      "Loves structure",
+      "Ace every challange",
+      "Plan Ahead",
+      "Well organised",
+      "Does not Miss Deadlines",
+    ],
+    userIcon: chillMasterIcon,
+  },
+];

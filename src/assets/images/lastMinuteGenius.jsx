@@ -1,8 +1,12 @@
-export function LastMinuteGenius() {
+import PropTypes from "prop-types";
+
+LastMinuteGenius.propTypes = {
+  className: PropTypes.string,
+};
+export function LastMinuteGenius({ className }) {
   return (
     <svg
-      width="720"
-      height="404"
+      className={className}
       viewBox="0 0 720 404"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
