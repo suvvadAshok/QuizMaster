@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
 // import { Personality } from "../components/personalityPage.jsx";
-import { LeadForm } from "../components/leadForm.jsx";
+// import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 import { BottomQuestionSteps } from "../components/bottomQuestionStep.jsx";
+import { useNavigate } from "react-router-dom";
+import { useAtom } from "jotai";
+import { userAtom } from "../atom.js";
 
 function Quiz() {
-  const [user, setUser] = React.useState("");
+  const navigate = useNavigate();
+  const [user, setUser] = useAtom(userAtom);
   const [qNum, setQNum] = React.useState(0);
   const [answers, setAnswers] = React.useState({
     "How do you prepare for exams?": "",
@@ -19,16 +23,16 @@ function Quiz() {
     "What do you do when you're stressed?": "",
   });
   const [error, setError] = React.useState("");
-  const [submit, setSubmit] = React.useState(true);
+  // const [submit, setSubmit] = React.useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmit(false);
+    // setSubmit(false);
     setError("");
 
     if (Object.keys(answers).length !== quiz.length) {
       setError("Please answer all questions before submitting.");
-      setSubmit(true);
+      // setSubmit(true);
       return;
     }
 
@@ -49,6 +53,7 @@ function Quiz() {
       }
     }
     setUser(value);
+    navigate("/details");
     console.log("Submitted Answers:", answers);
   };
 
@@ -62,49 +67,43 @@ function Quiz() {
   console.log(user);
   return (
     <div className="h-screen w-screen overflow-y-auto overflow-x-hidden no-scrollbar  flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2">
-      {submit ? (
-        <>
-          <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
-          <div
-            key={quiz[qNum].question}
-            className="flex justify-center items-center flex-col"
-          >
-            <OptionSelection
-              questionData={quiz[qNum]}
-              onAnswerChange={(answer) =>
-                handleAnswerChange(quiz[qNum].question, answer)
-              }
-              selectedAnswer={answers[quiz[qNum].question]}
-              setQNum={setQNum}
-              qNum={qNum}
-            />
+      <>
+        <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
+        <div
+          key={quiz[qNum].question}
+          className="flex justify-center items-center flex-col"
+        >
+          <OptionSelection
+            questionData={quiz[qNum]}
+            onAnswerChange={(answer) =>
+              handleAnswerChange(quiz[qNum].question, answer)
+            }
+            selectedAnswer={answers[quiz[qNum].question]}
+            setQNum={setQNum}
+            qNum={qNum}
+          />
 
-            {error && <p className="text-red-500">{error}</p>}
+          {error && <p className="text-red-500">{error}</p>}
 
-            {Object.values(answers).every((value) => value !== "") && (
-              <Link to="/result">
-                <button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className="py-3 px-10 text-white bg-black rounded-xl mt-4 shadow-md hover:shadow-xl text-lg font-medium  duration-100 transition-colors hover:transform hover:scale-110"
-                >
-                  Submit
-                </button>
-              </Link>
-            )}
+          {Object.values(answers).every((value) => value !== "") && (
+            <Link>
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="py-3 px-10 text-white bg-black rounded-xl mt-4 shadow-md hover:shadow-xl text-lg font-medium  duration-100 transition-colors hover:transform hover:scale-110"
+              >
+                Submit
+              </button>
+            </Link>
+          )}
 
-            <BottomQuestionSteps
-              setQNum={setQNum}
-              qNum={qNum}
-              answers={answers}
-            />
-          </div>
-        </>
-      ) : (
-        <>
-          <LeadForm user={user} />
-        </>
-      )}
+          <BottomQuestionSteps
+            setQNum={setQNum}
+            qNum={qNum}
+            answers={answers}
+          />
+        </div>
+      </>
     </div>
   );
 }
