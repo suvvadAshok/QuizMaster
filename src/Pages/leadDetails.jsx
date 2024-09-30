@@ -11,26 +11,32 @@ export function LeadDetails() {
   const [name, setName] = React.useState("");
   const [grade, setGrade] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [school, setSchool] = React.useState("");
 
   const navigate = useNavigate();
 
   function handleName(e) {
     e.preventDefault();
     setName(e.target.name.value);
+    e.target.reset();
   }
 
-  function handlegrade(e) {
+  function handleGrade(e) {
     e.preventDefault();
     setGrade(e.target.grade.value);
+    e.target.reset();
   }
 
   function handlePhone(e) {
     e.preventDefault();
     setPhone(e.target.phone.value);
+    e.target.reset();
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setSchool(e.target.school.value);
+
     try {
       const response = await axios.post(
         "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
@@ -38,7 +44,7 @@ export function LeadDetails() {
           Name: name,
           Phone: phone,
           Grade: grade,
-          School: e.target.school.value,
+          School: school,
         },
         {
           headers: { "Content-Type": "application/json" },
@@ -55,7 +61,7 @@ export function LeadDetails() {
     <div className="h-screen w-screen bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 justify-center overflow-y-auto">
       {state ? (
         <>
-          <div className="absolute top-[20%] w-[50%] flex flex-col gap-4 items-start">
+          <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
             <h2 className="font-semibold text-2xl">
               Ready to unlock something awesome?
             </h2>
@@ -69,19 +75,19 @@ export function LeadDetails() {
               the start of something pretty cool! 😎
             </p>
             <div
-              className="flex justify-center items-center bg-black text-white px-6 py-4 rounded-lg "
+              className="flex justify-center items-center md:gap-2 gap-1 bg-black text-white px-6 py-4 rounded-lg "
               onClick={() => setState(false)}
             >
               <button>Get Started</button>
-              <RightArrow />
+              <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
             </div>
           </div>
-          <SearchingImg className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20" />
+          <SearchingImg className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20 max-md:right-0" />
         </>
       ) : (
         <>
           {name === "" ? (
-            <div className="absolute top-[20%] w-[50%] flex flex-col gap-4 items-start">
+            <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
               <h2 className="font-semibold text-2xl">
                 Hey there! Let’s get to know each other.
               </h2>
@@ -91,39 +97,39 @@ export function LeadDetails() {
                   required
                   type="text"
                   name="name"
+                  placeholder="Enter name"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-
                 <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="Submit">Next</button>
-                  <RightArrow />
+                  <button type="submit">Next</button>
+                  <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
                 </div>
               </form>
             </div>
           ) : grade === "" ? (
-            <div className="absolute top-[20%] w-[50%] flex flex-col gap-4 items-start">
+            <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
               <h2 className="font-semibold text-2xl">
                 Awesome, thanks {name}!
               </h2>
               <p>Cool Now, Which grade are you rocking?</p>
-              <form onSubmit={handlegrade} className="w-full">
+              <form onSubmit={handleGrade} className="w-full">
                 <input
                   required
                   type="text"
                   name="grade"
+                  placeholder="Enter Grade"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-
                 <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="Submit">Next</button>
-                  <RightArrow />
+                  <button type="submit">Next</button>
+                  <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
                 </div>
               </form>
             </div>
           ) : phone === "" ? (
-            <div className="absolute top-[20%] w-[50%] flex flex-col gap-4 items-start">
+            <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
               <h2 className="font-semibold text-2xl">
-                Wow, Thats Great {name}.
+                Wow, That&rsquo;s Great {name}.
               </h2>
               <p>
                 Great! Can I get your phone number? Don’t worry, we won’t spam
@@ -134,17 +140,17 @@ export function LeadDetails() {
                   required
                   type="text"
                   name="phone"
+                  placeholder="Enter Phone Number"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-
                 <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="Submit">Next</button>
-                  <RightArrow />
+                  <button type="submit">Next</button>
+                  <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
                 </div>
               </form>
             </div>
           ) : (
-            <div className="absolute top-[20%] w-[50%] flex flex-col gap-4 items-start">
+            <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
               <h2 className="font-semibold text-2xl">
                 Almost Done, Thanks a ton!
               </h2>
@@ -157,18 +163,20 @@ export function LeadDetails() {
                   required
                   type="text"
                   name="school"
+                  placeholder="Enter School name"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-
                 <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="Submit">All Done</button>
-                  <RightArrow />
+                  <button type="submit" className="text-nowrap">
+                    All Done
+                  </button>
+                  <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
                 </div>
               </form>
             </div>
           )}
 
-          <FormFilling className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-20 absolute right-20" />
+          <FormFilling className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20 max-md:right-0" />
         </>
       )}
     </div>

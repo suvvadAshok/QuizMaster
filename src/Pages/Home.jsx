@@ -28,8 +28,8 @@ const item = {
 };
 const HomePage = () => {
   return (
-    <section className="w-screen h-screen bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 items-center justify-center overflow-y-auto">
-      <div className="flex flex-nowrap w-full justify-between max-md:flex-wrap-reverse mt-20 max-lg:mt-52 max-md:mt-96 max-sm:mt-96">
+    <section className="w-screen h-screen bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 items-center justify-center max-lg:justify-start overflow-y-auto">
+      <div className="flex flex-nowrap w-full justify-between max-md:flex-wrap-reverse ">
         <div className="flex flex-col gap-4">
           <h2 className="font-medium text-5xl max-sm:text-2xl">
             What kind of IB Student are you?
@@ -43,7 +43,7 @@ const HomePage = () => {
         <div className="">
           <img
             src={logo}
-            className="w-52 h-20"
+            className="w-52 h-20 min-w-20 min-h-12"
             alt="sparkl"
             height="80px"
             width="160px"
