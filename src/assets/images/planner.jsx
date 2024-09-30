@@ -1,8 +1,12 @@
-export function Planner() {
+import PropTypes from "prop-types";
+
+Planner.propTypes = {
+  className: PropTypes.string,
+};
+export function Planner({ className }) {
   return (
     <svg
-      width="731"
-      height="514"
+      className={className}
       viewBox="0 0 731 514"
       fill="none"
     >
