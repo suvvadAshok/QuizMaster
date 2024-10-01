@@ -58,7 +58,7 @@ export function LeadDetails() {
   }
 
   return (
-    <div className="h-screen w-screen bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 justify-center overflow-y-auto">
+    <div className="h-screen w-screen font-custome_font_2 bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 justify-center overflow-y-auto">
       {state ? (
         <>
           <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
@@ -154,10 +154,7 @@ export function LeadDetails() {
               <h2 className="font-semibold text-2xl">
                 Almost Done, Thanks a ton!
               </h2>
-              <p>
-                Finally, could you drop your email so we can keep you in the
-                loop?
-              </p>
+              <p>Finally, could you drop your school name?</p>
               <form onSubmit={handleSubmit} className="w-full">
                 <input
                   required

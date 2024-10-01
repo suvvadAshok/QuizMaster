@@ -18,14 +18,14 @@ export function QuestionOne({ fill, stroke, className }) {
           stroke={stroke}
           className="transition-all"
         />
-        <circle
+        {/* <circle
           cx="77"
           cy="77"
           r="70"
           stroke={stroke}
           fill={fill}
           strokeWidth="10"
-        />
+        /> */}
       </g>
       <path
         d="M60.824 56.744L76.376 47.72H83.96V113H75.8V56.552L64.472 63.08L60.824 56.744Z"

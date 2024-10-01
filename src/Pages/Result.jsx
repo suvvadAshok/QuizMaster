@@ -17,8 +17,8 @@ function Result() {
   const userData = resultData.find((data) => data.user.includes(user));
 
   return (
-    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient">
-      <div className="flex max-md:flex-col justify-center items-center h-full">
+    <section className="w-screen h-screen font-custome_font_1 max-sm:px-5 max-sm:w-full bg-custom-gradient">
+      <div className="flex max-md:flex-col justify-center items-center h-full gap-2">
         <div className="bg-white rounded-xl p-8 w-[40%] max-md:w-[90%] flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div>
@@ -66,11 +66,10 @@ const resultData = [
       <LastMinuteGenius className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
     ),
     keywords: [
-      "Loves structure",
-      "Ace every challange",
-      "Plan Ahead",
-      "Well organised",
-      "Does not Miss Deadlines",
+      "Thrives Under Pressure",
+      "Pulls It All Together",
+      "Has Impressive Strategies",
+      "Finds Final Hour Solutions",
     ],
     userIcon: lastMinuteGeniusIcon,
   },
@@ -80,11 +79,10 @@ const resultData = [
       <StudyBuddy className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
     ),
     keywords: [
-      "Loves structure",
-      "Ace every challange",
-      "Plan Ahead",
-      "Well organised",
-      "Does not Miss Deadlines",
+      "Better With Friends",
+      "Loves Group Study",
+      "Stays Motivated",
+      "Collaborative Learning",
     ],
     userIcon: studyBuddyIcon,
   },
@@ -94,11 +92,11 @@ const resultData = [
       <ChillMaster className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
     ),
     keywords: [
-      "Loves structure",
-      "Ace every challange",
-      "Plan Ahead",
-      "Well organised",
-      "Does not Miss Deadlines",
+      "Calm and Relaxed",
+      "Eventually Balances",
+      "Tension Free",
+      "Loves to Enjoy",
+      "Schoolwork Is Easy",
     ],
     userIcon: chillMasterIcon,
   },
