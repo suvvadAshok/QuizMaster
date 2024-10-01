@@ -66,7 +66,7 @@ function Quiz() {
 
   console.log(user);
   return (
-    <div className="h-screen w-screen overflow-y-auto overflow-x-hidden no-scrollbar  flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2">
+    <div className="h-screen w-screen overflow-y-auto font-custome_font_2 overflow-x-hidden no-scrollbar  flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2">
       <>
         <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
         <div

@@ -16,13 +16,11 @@ export function BottomQuestionSteps({ setQNum, qNum, answers }) {
   const [able, setAble] = React.useState([]);
 
   React.useEffect(() => {
-    console.log(able);
     setAble(Object.values(answers).map((i) => (i ? "able" : "notAble")));
   }, [qNum]);
-  console.log(qNum);
 
   return (
-    <div className="mt-4 md:hidden">
+    <div className="mt-4 flex gap-1 md:hidden">
       <button disabled={able[0] === "notAble"} onClick={() => setQNum(0)}>
         <QuestionOne
           className={"h-12 w-12"}
