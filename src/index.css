@@ -2,58 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.eot"); /* IE9 */
-  src: url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.woff2")
-      format("woff2"),
-    /* Modern Browsers */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Regular.svg#GTWalsheimProRegular")
-      format("svg"); /* Legacy iOS */
-  font-weight: 400; /* Regular weight */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.eot"); /* IE9 */
-  src: url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.woff2")
-      format("woff2"),
-    /* Modern Browsers */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.woff")
-      format("woff"),
-    /* Modern Browsers */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/fonts/GT-Walsheim-Pro/GTWalsheimPro-Bold.svg#GTWalsheimPro")
-      format("svg"); /* Legacy iOS */
-  font-weight: 700;
-  font-style: normal;
-}
 :root {
   --neutral-200: #f9fafe;
   --neutral-600: #6e7191;
