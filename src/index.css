@@ -1,9 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Metrophobic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
@@ -15,63 +15,6 @@
   }
 }
 
-:root {
-  --neutral-200: #f9fafe;
-  --neutral-600: #6e7191;
-  --white: white;
-  --neutral-800: #080808;
-  --primary-1: #ff3951;
-  --secondary-2: #3f80fd;
-  --neutral-300: #f4f5fa;
-  --neutral-400: #ebecf3;
-  --secondary-1: #fff1f3;
-  --secondary-3: #ecf4ff;
-  --secondary-4: #ffc226;
-  --neutral-700: #4e4b66;
-  --neutral-500: #cccedf;
-  --secondary-5: #fff8e7;
-  --secondary-6: #6a35ff;
-  --secondary-7: #f2eaff;
-}
-
-body {
-  font-family: "GT Walsheim Pro", sans-serif;
-  font-weight: 400;
-
-  /* 
-  background: linear-gradient(
-    121.25deg,
-    #ffffff -3.14%,
-    rgba(255, 250, 245, 0.91) 4.65%,
-    rgba(255, 245, 235, 0.83) 12.44%,
-    rgba(255, 240, 225, 0.74) 20.23%,
-    rgba(255, 235, 215, 0.65) 28.02%,
-    rgba(255, 230, 205, 0.57) 35.81%,
-    rgba(255, 234, 201, 0.57) 43.6%,
-    rgba(255, 238, 197, 0.58) 51.39%,
-    rgba(254, 243, 193, 0.58) 59.18%,
-    rgba(250, 248, 191, 0.58) 66.97%,
-    rgba(243, 254, 190, 0.59) 74.76%,
-    rgba(225, 253, 179, 0.56) 82.55%,
-    rgba(202, 253, 171, 0.53) 90.34%,
-    rgba(174, 252, 166, 0.49) 98.13%,
-    rgba(138, 252, 166, 0.46) 105.92%,
-    rgba(86, 251, 171, 0.43) 113.71%
-  ); */
-
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-/* .home{
-    width: 100%;
-    height: auto;
-    position: relative;
-    background: linear-gradient(121.25deg, #FFFFFF -3.14%, rgba(255, 250, 245, 0.91) 4.65%, rgba(255, 245, 235, 0.83) 12.44%, rgba(255, 240, 225, 0.74) 20.23%, rgba(255, 235, 215, 0.65) 28.02%, rgba(255, 230, 205, 0.57) 35.81%, rgba(255, 234, 201, 0.57) 43.6%, rgba(255, 238, 197, 0.58) 51.39%, rgba(254, 243, 193, 0.58) 59.18%, rgba(250, 248, 191, 0.58) 66.97%, rgba(243, 254, 190, 0.59) 74.76%, rgba(225, 253, 179, 0.56) 82.55%, rgba(202, 253, 171, 0.53) 90.34%, rgba(174, 252, 166, 0.49) 98.13%, rgba(138, 252, 166, 0.46) 105.92%, rgba(86, 251, 171, 0.43) 113.71%);
-    ; 
-} */
 .prev-button {
 }
 .next-button {
