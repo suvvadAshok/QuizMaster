@@ -6,7 +6,6 @@ import architect from "../assets/images/architect.svg";
 import { motion } from "framer-motion";
 import logo from "../assets/images/logo.svg";
 
-// Animation Variants
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -69,8 +68,12 @@ const HomePage = () => {
         ))}
       </motion.div>
 
-      <div className="flex w-full justify-between max-md:hidden items-center">
-        <div className="">
+      <div className="flex justify-between max-md:hidden w-full items-center">
+        <p className="text-xl font-medium max-md:text-lg max-sm:text-base">
+          Find out which type of IB student you are with this fun, interactive
+          quiz! Share your results with friends and see who they are!
+        </p>
+        <div>
           <Link
             to="/quiz"
             className="text-white bg-[#fbbd2d] py-5 px-8 text-xl rounded-xl font-500 text-nowrap"
@@ -79,7 +82,8 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
-      <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base">
+
+      <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base md:hidden">
         Find out which type of IB student you are with this fun, interactive
         quiz! Share your results with friends and see who they are!
       </p>

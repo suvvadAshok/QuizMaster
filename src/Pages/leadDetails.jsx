@@ -154,10 +154,7 @@ export function LeadDetails() {
               <h2 className="font-semibold text-2xl">
                 Almost Done, Thanks a ton!
               </h2>
-              <p>
-                Finally, could you drop your email so we can keep you in the
-                loop?
-              </p>
+              <p>Finally, could you drop your school name?</p>
               <form onSubmit={handleSubmit} className="w-full">
                 <input
                   required
