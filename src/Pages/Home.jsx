@@ -28,13 +28,13 @@ const item = {
 };
 const HomePage = () => {
   return (
-    <section className="w-screen h-screen bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 items-center justify-center max-lg:justify-start overflow-y-auto">
+    <section className="w-screen h-screen font-custome_font_1 bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 items-center justify-center max-lg:justify-start overflow-y-auto">
       <div className="flex flex-nowrap w-full justify-between max-md:flex-wrap-reverse ">
         <div className="flex flex-col gap-4">
-          <h2 className="font-medium text-5xl max-sm:text-2xl">
+          <h2 className="font-medium text-5xl max-md:text-2xl">
             What kind of IB Student are you?
           </h2>
-          <p className="text-xl font-medium md:w-[75%] max-sm:text-lg">
+          <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base">
             IB is more than just a curriculum—it&rsquo;s a lifestyle! Are you
             the cool-under-pressure student, the one who aces every subject, or
             maybe the one who&rsquo;s all about balancing study and fun?
@@ -43,7 +43,7 @@ const HomePage = () => {
         <div className="">
           <img
             src={logo}
-            className="w-52 h-20 min-w-20 min-h-12"
+            className="w-32 h-20 min-w-32 min-h-12"
             alt="sparkl"
             height="80px"
             width="160px"
@@ -52,7 +52,7 @@ const HomePage = () => {
       </div>
 
       <motion.div
-        className="flex gap-5 justify-start overflow-x-auto w-[80%] max-md:w-full min-h-[400px] flex-nowrap max-sm:px-0  no-scrollbar rounded-2xl"
+        className="flex gap-5 justify-start overflow-x-auto w-[80%] min-h-[400px] max-md:w-full flex-nowrap max-sm:px-0  no-scrollbar md:rounded-2xl rounded-xl"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -60,21 +60,17 @@ const HomePage = () => {
         {homePageCardsData.map((data) => (
           <motion.div
             key={data.id}
-            className="card rounded-2xl bg-white flex justify-center items-center flex-col"
+            className="card rounded-2xl bg-white flex justify-center items-center flex-col overflow-hidden "
             variants={item}
           >
-            <img src={data.imgSrc} alt="Skateboard" className="" />
+            <img src={data.imgSrc} alt="Skateboard" className="min-h-40" />
             <p className=" text-center">{data.title}</p>
           </motion.div>
         ))}
       </motion.div>
 
-      <div className="flex w-full justify-between items-center max-md:flex-col max-sm:text-lg">
-        <p className="text-xl font-medium md:w-[75%]">
-          Find out which type of IB student you are with this fun, interactive
-          quiz! Share your results with friends and see who they are!
-        </p>
-        <div className="max-md:hidden">
+      <div className="flex w-full justify-between max-md:hidden items-center">
+        <div className="">
           <Link
             to="/quiz"
             className="text-white bg-[#fbbd2d] py-5 px-8 text-xl rounded-xl font-500 text-nowrap"
@@ -83,8 +79,12 @@ const HomePage = () => {
           </Link>
         </div>
       </div>
-      <div className="md:hidden max-md:sticky max-md:bottom-0 max-md:w-[100%] max-md:bg-[#fbbd2d] py-5 px-8 text-center text-xl rounded-xl font-500">
-        <Link to="/quiz" className="text-white   text-nowrap">
+      <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base">
+        Find out which type of IB student you are with this fun, interactive
+        quiz! Share your results with friends and see who they are!
+      </p>
+      <div className="md:hidden max-md:sticky max-md:bottom-2 max-md:w-[100%] max-md:bg-[#fbbd2d] text-black py-3 text-center text-xl rounded-xl font-500">
+        <Link to="/quiz" className=" text-nowrap">
           Let&rsquo;s start
         </Link>
       </div>

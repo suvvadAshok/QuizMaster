@@ -17,7 +17,7 @@ function Result() {
   const userData = resultData.find((data) => data.user.includes(user));
 
   return (
-    <section className="w-screen h-screen max-sm:px-5 max-sm:w-full bg-custom-gradient">
+    <section className="w-screen h-screen font-custome_font_1 max-sm:px-5 max-sm:w-full bg-custom-gradient">
       <div className="flex max-md:flex-col justify-center items-center h-full">
         <div className="bg-white rounded-xl p-8 w-[40%] max-md:w-[90%] flex flex-col gap-4">
           <div className="flex justify-between items-center">
