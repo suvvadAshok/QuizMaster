@@ -15,6 +15,26 @@
   }
 }
 
+.home-page-setup {
+  @apply w-screen h-screen font-custome_font_1 bg-custom-gradient;
+}
+
+.flex-verticle {
+  @apply flex flex-col items-center justify-center;
+}
+
+.flex-between {
+  @apply w-full flex justify-between;
+}
+
+.head-font {
+  @apply font-medium text-5xl max-md:text-2xl max-lg:text-3xl;
+}
+
+.para-font {
+  @apply font-medium text-xl max-md:text-lg max-sm:text-base text-justify;
+}
+
 .prev-button {
 }
 .next-button {
