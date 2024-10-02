@@ -7,7 +7,6 @@ QuestionTwo.propTypes = {
 };
 
 export function QuestionTwo({ fill, stroke, className }) {
-  console.log(fill);
   return (
     <svg viewBox="0 0 152 152" className={className}>
       <g opacity="1">

@@ -88,7 +88,7 @@ const HomePage = () => {
         quiz! Share your results with friends and see who they are!
       </p>
       <div className="md:hidden max-md:sticky max-md:bottom-2 max-md:w-[100%] max-md:bg-[#fbbd2d] text-black py-3 text-center text-xl rounded-xl font-500">
-        <Link to="/quiz" className=" text-nowrap">
+        <Link to="/quiz" className="text-nowrap">
           Let&rsquo;s start
         </Link>
       </div>
