@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-ChillMaster.propTypes = {
-  className: PropTypes.string,
-};
+ChillMaster.propTypes = UserCharPropTypes
 
 export function ChillMaster({ className }) {
   return (

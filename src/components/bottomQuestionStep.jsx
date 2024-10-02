@@ -1,16 +1,12 @@
-import PropTypes from "prop-types";
 import { QuestionOne } from "../assets/images/number_1.jsx";
 import { QuestionTwo } from "../assets/images/number_2.jsx";
 import { QuestionThree } from "../assets/images/number_3.jsx";
 import { QuestionFour } from "../assets/images/number_4.jsx";
 import { QuestionFive } from "../assets/images/number_5.jsx";
 import React from "react";
+import { QuestionStepsPropTypes } from "../assets/dataTypes.js";
 
-BottomQuestionSteps.propTypes = {
-  setQNum: PropTypes.func.isRequired,
-  qNum: PropTypes.number.isRequired,
-  answers: PropTypes.object.isRequired,
-};
+BottomQuestionSteps.propTypes = QuestionStepsPropTypes
 
 export function BottomQuestionSteps({ setQNum, qNum, answers }) {
   const [able, setAble] = React.useState([]);

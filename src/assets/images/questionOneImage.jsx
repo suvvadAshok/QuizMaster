@@ -1,10 +1,6 @@
-import PropTypes from "prop-types";
+import { QuestionImagePropTypes } from "../dataTypes";
 
-QuestionOneImage.propTypes = {
-  heigth: PropTypes.string.isRequired,
-  width: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
+QuestionOneImage.propTypes = QuestionImagePropTypes
 export function QuestionOneImage({ heigth = "250", width = "398", className }) {
   return (
     <svg

@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-LastMinuteGenius.propTypes = {
-  className: PropTypes.string,
-};
+LastMinuteGenius.propTypes = UserCharPropTypes
 export function LastMinuteGenius({ className }) {
   return (
     <svg

@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-StudyBuddy.propTypes = {
-  className: PropTypes.string,
-};
+StudyBuddy.propTypes = UserCharPropTypes;
 
 export function StudyBuddy({ className }) {
   return (

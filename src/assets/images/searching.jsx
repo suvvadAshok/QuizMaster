@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-SearchingImg.propTypes = {
-  className: PropTypes.string,
-};
+SearchingImg.propTypes = UserCharPropTypes
 
 export function SearchingImg({ className }) {
   return (
