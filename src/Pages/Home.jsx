@@ -25,24 +25,23 @@ const item = {
     opacity: 1,
   },
 };
+
 const HomePage = () => {
   return (
-    <section className="w-screen h-screen font-custome_font_1 bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 items-center justify-center max-lg:justify-start overflow-y-auto">
-      <div className="flex flex-nowrap w-full justify-between max-md:flex-wrap-reverse ">
-        <div className="flex flex-col gap-4">
-          <h2 className="font-medium text-5xl max-md:text-2xl">
-            What kind of IB Student are you?
-          </h2>
-          <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base">
+    <section className="home-page-setup px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex-verticle gap-2 sm:gap-8 max-sm:py-2  overflow-y-auto">
+      <div className="flex-between items-start max-md:flex-wrap-reverse ">
+        <div className="flex flex-col md:gap-4">
+          <h2 className="head-font">What kind of IB Student are you?</h2>
+          <p className="para-font">
             IB is more than just a curriculum—it&rsquo;s a lifestyle! Are you
             the cool-under-pressure student, the one who aces every subject, or
             maybe the one who&rsquo;s all about balancing study and fun?
           </p>
         </div>
-        <div className="">
+        <div>
           <img
             src={logo}
-            className="w-32 h-20 min-w-32 min-h-12"
+            className="min-w-32 min-h-10"
             alt="sparkl"
             height="80px"
             width="160px"
@@ -50,8 +49,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      <motion.div
-        className="flex gap-5 justify-start overflow-x-auto w-[80%] min-h-[400px] max-md:w-full flex-nowrap max-sm:px-0  no-scrollbar md:rounded-2xl rounded-xl"
+      {/* <motion.div
+        className="flex gap-5 justify-start overflow-x-auto w-[80%] min-h-20 max-md:w-full flex-nowrap max-sm:px-0  no-scrollbar md:rounded-2xl rounded-xl"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -62,14 +61,32 @@ const HomePage = () => {
             className="card rounded-2xl bg-white flex justify-center items-center flex-col overflow-hidden "
             variants={item}
           >
-            <img src={data.imgSrc} alt="Skateboard" className="min-h-40" />
+            <img src={data.imgSrc} alt="Skateboard" className="" />
             <p className=" text-center">{data.title}</p>
+          </motion.div>
+        ))}
+      </motion.div> */}
+
+      <motion.div
+        className="flex gap-2 items-center overflow-x-auto w-[80%] min-h-60 rounded-xl snap-x snap-proximity"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {homePageCardsData.map((data) => (
+          <motion.div
+            key={data.id}
+            variants={item}
+            className="flex-verticle bg-white min-w-64 h-full overflow-y-hidden py-6  rounded-xl snap-center"
+          >
+            <img src={data.imgSrc} alt="" className="" />
+            <p className="text-nowrap">{data.title}</p>
           </motion.div>
         ))}
       </motion.div>
 
-      <div className="flex justify-between max-md:hidden w-full items-center">
-        <p className="text-xl font-medium max-md:text-lg max-sm:text-base">
+      <div className="flex-between items-center max-md:hidden">
+        <p className="para-font">
           Find out which type of IB student you are with this fun, interactive
           quiz! Share your results with friends and see who they are!
         </p>
@@ -83,11 +100,12 @@ const HomePage = () => {
         </div>
       </div>
 
-      <p className="text-xl font-medium md:w-[75%] max-md:text-lg max-sm:text-base md:hidden">
+      <p className="para-font md:hidden">
         Find out which type of IB student you are with this fun, interactive
         quiz! Share your results with friends and see who they are!
       </p>
-      <div className="md:hidden max-md:sticky max-md:bottom-2 max-md:w-[100%] max-md:bg-[#fbbd2d] text-black py-3 text-center text-xl rounded-xl font-500">
+
+      <div className="md:hidden sticky bottom-2 w-[100%] bg-[#fbbd2d] text-black py-3 text-center text-xl rounded-xl font-500">
         <Link to="/quiz" className="text-nowrap">
           Let&rsquo;s start
         </Link>
