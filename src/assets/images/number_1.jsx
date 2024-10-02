@@ -1,10 +1,6 @@
-import PropTypes from "prop-types";
+import { QuestionNumberPropTypes } from "../dataTypes";
 
-QuestionOne.propTypes = {
-  fill: PropTypes.string.isRequired,
-  stroke: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
+QuestionOne.propTypes = QuestionNumberPropTypes
 
 export function QuestionOne({ fill, stroke, className }) {
   return (

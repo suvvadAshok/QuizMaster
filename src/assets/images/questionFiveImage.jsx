@@ -1,10 +1,6 @@
-import PropTypes from "prop-types";
+import { QuestionImagePropTypes } from "../dataTypes";
 
-QuestionFiveImage.propTypes = {
-  heigth: PropTypes.string.isRequired,
-  width: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
+QuestionFiveImage.propTypes = QuestionImagePropTypes;
 
 export function QuestionFiveImage({
   heigth = "250",

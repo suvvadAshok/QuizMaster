@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-FormFilling.propTypes = {
-  className: PropTypes.string,
-};
+FormFilling.propTypes = UserCharPropTypes
 
 export function FormFilling({ className }) {
   return (

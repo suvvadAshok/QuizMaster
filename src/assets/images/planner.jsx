@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
+import { UserCharPropTypes } from "../dataTypes";
 
-Planner.propTypes = {
-  className: PropTypes.string,
-};
+Planner.propTypes = UserCharPropTypes
 export function Planner({ className }) {
   return (
     <svg
