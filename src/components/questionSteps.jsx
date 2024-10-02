@@ -17,10 +17,8 @@ export function QuestionSteps({ setQNum, qNum, answers }) {
   const [able, setAble] = React.useState([]);
 
   React.useEffect(() => {
-    console.log(able);
     setAble(Object.values(answers).map((i) => (i ? "able" : "notAble")));
   }, [qNum]);
-  console.log(qNum);
 
   return (
     <div className="relative max-md:hidden">

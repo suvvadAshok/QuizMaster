@@ -10,6 +10,7 @@ import { BottomQuestionSteps } from "../components/bottomQuestionStep.jsx";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { userAtom } from "../atom.js";
+// import { answerAtom } from "../atom.js";
 
 function Quiz() {
   const navigate = useNavigate();
@@ -37,7 +38,6 @@ function Quiz() {
     }
 
     const ans = Object.values(answers);
-    console.log("ans", ans);
     let max = 0;
     let value = "";
     for (let i = 0; i < ans.length; i++) {
@@ -54,9 +54,7 @@ function Quiz() {
     }
     setUser(value);
     navigate("/details");
-    console.log("Submitted Answers:", answers);
   };
-
   const handleAnswerChange = (question, answer) => {
     setAnswers((prev) => ({
       ...prev,
