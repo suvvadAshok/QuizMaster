@@ -18,6 +18,5 @@ export const UserCharPropTypes = {
 
 export const QuestionStepsPropTypes = {
     setQNum: PropTypes.func.isRequired,
-    qNum: PropTypes.number.isRequired,
     answers: PropTypes.object.isRequired,
   };

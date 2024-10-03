@@ -1,5 +1,3 @@
-// import { useLocation } from "react-router-dom";
-// import { Personality } from "../components/personalityPage";
 import { Planner } from "../assets/images/planner";
 import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
 import { StudyBuddy } from "../assets/images/studyBuddy";
@@ -13,6 +11,8 @@ import { userAtom } from "../atom.js";
 
 function Result() {
   const [user] = useAtom(userAtom);
+
+  console.log(user);
 
   const userData = resultData.find((data) => data.user.includes(user));
 

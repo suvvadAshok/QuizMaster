@@ -74,13 +74,13 @@ export function LeadDetails() {
               Don’t worry, it’ll only take a minute, and who knows — it could be
               the start of something pretty cool! 😎
             </p>
-            <div
+            <button
               className="flex justify-center items-center md:gap-2 gap-1 bg-black text-white px-6 py-4 rounded-lg "
               onClick={() => setState(false)}
             >
-              <button>Get Started</button>
+              Get Started
               <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
-            </div>
+            </button>
           </div>
           <SearchingImg className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20 max-md:right-0" />
         </>
@@ -100,10 +100,13 @@ export function LeadDetails() {
                   placeholder="Enter name"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-                <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="submit">Next</button>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg"
+                >
+                  Next
                   <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
-                </div>
+                </button>
               </form>
             </div>
           ) : grade === "" ? (
@@ -120,10 +123,13 @@ export function LeadDetails() {
                   placeholder="Enter Grade"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-                <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="submit">Next</button>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg"
+                >
+                  Next
                   <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
-                </div>
+                </button>
               </form>
             </div>
           ) : phone === "" ? (
@@ -143,10 +149,13 @@ export function LeadDetails() {
                   placeholder="Enter Phone Number"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-                <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="submit">Next</button>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg"
+                >
+                  Next
                   <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
-                </div>
+                </button>
               </form>
             </div>
           ) : (
@@ -163,12 +172,13 @@ export function LeadDetails() {
                   placeholder="Enter School name"
                   className="w-full outline-none bg-transparent border-b-2 border-b-[#FBC02D]"
                 />
-                <div className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg">
-                  <button type="submit" className="text-nowrap">
-                    All Done
-                  </button>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center items-center gap-4 bg-black text-white px-8 py-4 mt-4 rounded-lg text-nowrap"
+                >
+                  All Done
                   <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
-                </div>
+                </button>
               </form>
             </div>
           )}
