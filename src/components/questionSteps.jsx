@@ -4,21 +4,19 @@ import { QuestionTwo } from "../assets/images/number_2.jsx";
 import { QuestionThree } from "../assets/images/number_3.jsx";
 import { QuestionFour } from "../assets/images/number_4.jsx";
 import { QuestionFive } from "../assets/images/number_5.jsx";
-import React from "react";
-import { QuestionStepsPropTypes } from "../assets/dataTypes.js";
+import { useAtom } from "jotai";
+import { qNumAtom } from "../atom.js";
+import { answerAtom } from "../atom.js";
 
-QuestionSteps.propTypes = QuestionStepsPropTypes;
+export function QuestionSteps() {
+  const [setQNum] = useAtom(qNumAtom);
+  const [answers] = useAtom(answerAtom);
 
-export function QuestionSteps({ setQNum, qNum, answers }) {
-  const [able, setAble] = React.useState([]);
-
-  React.useEffect(() => {
-    setAble(Object.values(answers).map((i) => (i ? "able" : "notAble")));
-  }, [qNum]);
+  const able = Object.values(answers).map((i) => (i ? "able" : "notAble"));
 
   return (
     <div className="relative max-md:hidden">
-      <OnTopCurve qNum={qNum} className={"w-full"} />
+      <OnTopCurve className={"w-full"} />
       <div>
         <button
           disabled={able[0] === "notAble"}
