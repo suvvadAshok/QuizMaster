@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useAtom } from "jotai";
+import { qNumAtom } from "../../atom";
 
 OnTopCurve.propTypes = {
-  qNum: PropTypes.number.isRequired,
   className: PropTypes.string,
 };
 
-export function OnTopCurve({ qNum, className }) {
+export function OnTopCurve({ className }) {
+  const [qNum] = useAtom(qNumAtom);
   let path = 0;
   if (qNum === 0) {
     path = 0.1;
