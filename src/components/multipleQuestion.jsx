@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
+import { useAtom } from "jotai";
+import { qNumAtom } from "../atom.js";
+import { PropTypes } from "prop-types";
 
-const OptionSelection = (prop) => {
+const OptionSelection = ({ questionData, onAnswerChange, selectedAnswer }) => {
+  const [qNum, setQNum] = useAtom(qNumAtom);
   const handleOptionChange = (option) => {
-    prop.onAnswerChange(option);
-    if (prop.qNum < 4) {
+    onAnswerChange(option);
+    if (qNum < 4) {
       setTimeout(() => {
-        prop.setQNum(prop.qNum + 1);
+        setQNum(qNum + 1);
       }, 700);
     }
   };
@@ -43,11 +47,11 @@ const OptionSelection = (prop) => {
     <>
       <div className="flex w-full flex-row-reverse max-lg:flex-col sm:justify-between max-md:max-w-[90%]">
         <div className="flex justify-center items-center">
-          {prop.questionData.relImg}
+          {questionData.relImg}
         </div>
         <div className="flex items-end mb-8 max-sm:mb-2">
           <h3 className="font-semibold text-2xl max-sm:text-base">
-            {prop.questionData.question}
+            {questionData.question}
           </h3>
         </div>
       </div>
@@ -57,11 +61,11 @@ const OptionSelection = (prop) => {
         initial="hidden"
         animate="visible"
       >
-        {prop.questionData.options.map((option) => (
+        {questionData.options.map((option) => (
           <motion.div
             key={option.label}
             className={`p-2 sm:p-4 rounded-lg sm:rounded-xl bg-white/90 border-2 shadow-md hover:shadow-xl transition-all duration-300 ${
-              prop.selectedAnswer === option.label
+              selectedAnswer === option.label
                 ? "border-[#3f80fd]"
                 : "border-transparent"
             }`}
@@ -79,3 +83,18 @@ const OptionSelection = (prop) => {
 };
 
 export default OptionSelection;
+
+OptionSelection.propTypes = {
+  questionData: PropTypes.shape({
+    question: PropTypes.string.isRequired,
+    relImg: PropTypes.node.isRequired,
+    options: PropTypes.arrayOf(
+      PropTypes.shape({
+        option: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+  onAnswerChange: PropTypes.func.isRequired,
+  selectedAnswer: PropTypes.string,
+};

@@ -1,6 +1,7 @@
 import { atom } from "jotai";
 
 export const userAtom = atom("");
+export const qNumAtom = atom(0);
 export const answerAtom = atom({
   "How do you prepare for exams?": "",
   "When it comes to CAS (Creativity, Activity, Service), you...": "",

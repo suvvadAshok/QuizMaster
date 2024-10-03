@@ -1,39 +1,28 @@
-//import { quiz } from "./assets/data.js";
 import { quiz } from "../assets/data.jsx";
 import { Link } from "react-router-dom";
 import OptionSelection from "../components/multipleQuestion.jsx";
 import React from "react";
-// import { Personality } from "../components/personalityPage.jsx";
-// import { LeadForm } from "../components/leadForm.jsx";
 import { QuestionSteps } from "../components/questionSteps.jsx";
 import { BottomQuestionSteps } from "../components/bottomQuestionStep.jsx";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { userAtom } from "../atom.js";
-// import { answerAtom } from "../atom.js";
+import { answerAtom } from "../atom.js";
+import { qNumAtom } from "../atom.js";
 
 function Quiz() {
   const navigate = useNavigate();
   const [user, setUser] = useAtom(userAtom);
-  const [qNum, setQNum] = React.useState(0);
-  const [answers, setAnswers] = React.useState({
-    "How do you prepare for exams?": "",
-    "When it comes to CAS (Creativity, Activity, Service), you...": "",
-    "How do you tackle TOK (Theory of Knowledge)?": "",
-    "What's your biggest IB exam tip?": "",
-    "What do you do when you're stressed?": "",
-  });
+  const [qNum, setQNum] = useAtom(qNumAtom);
+  const [answers, setAnswers] = useAtom(answerAtom);
   const [error, setError] = React.useState("");
-  // const [submit, setSubmit] = React.useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setSubmit(false);
     setError("");
 
     if (Object.keys(answers).length !== quiz.length) {
       setError("Please answer all questions before submitting.");
-      // setSubmit(true);
       return;
     }
 
@@ -66,7 +55,7 @@ function Quiz() {
   return (
     <div className="h-screen w-screen overflow-y-auto font-custome_font_2 overflow-x-hidden no-scrollbar  flex flex-col justify-center items-center bg-custom-gradient max-sm:p-2">
       <>
-        <QuestionSteps setQNum={setQNum} qNum={qNum} answers={answers} />
+        <QuestionSteps />
         <div
           key={quiz[qNum].question}
           className="flex justify-center items-center flex-col"
@@ -77,8 +66,6 @@ function Quiz() {
               handleAnswerChange(quiz[qNum].question, answer)
             }
             selectedAnswer={answers[quiz[qNum].question]}
-            setQNum={setQNum}
-            qNum={qNum}
           />
 
           {error && <p className="text-red-500">{error}</p>}
