@@ -82,7 +82,7 @@ export function LeadDetails() {
               <RightArrow className="h-6 w-8 max-md:h-4 max-md:w-4" />
             </button>
           </div>
-          <SearchingImg className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20 max-md:right-0" />
+          <SearchingImg className="max-md:h-64 max-sm:h-52 max-sm:w-60 max-md:w-72 h-[600px] bottom-0 absolute right-20 max-md:right-0" />
         </>
       ) : (
         <>
@@ -183,7 +183,7 @@ export function LeadDetails() {
             </div>
           )}
 
-          <FormFilling className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-80 w-80 bottom-0 absolute right-20 max-md:right-0" />
+          <FormFilling className="max-md:h-56 max-sm:h-52 max-sm:w-60 max-md:w-72 h-[500px]  bottom-0 absolute right-20 max-md:right-0" />
         </>
       )}
     </div>

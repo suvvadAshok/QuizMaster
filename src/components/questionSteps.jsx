@@ -9,7 +9,7 @@ import { qNumAtom } from "../atom.js";
 import { answerAtom } from "../atom.js";
 
 export function QuestionSteps() {
-  const [setQNum] = useAtom(qNumAtom);
+  const [qNum, setQNum] = useAtom(qNumAtom);
   const [answers] = useAtom(answerAtom);
 
   const able = Object.values(answers).map((i) => (i ? "able" : "notAble"));
