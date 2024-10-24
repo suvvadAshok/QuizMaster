@@ -28,8 +28,8 @@ const item = {
 
 const HomePage = () => {
   return (
-    <section className="home-page-setup px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex-verticle gap-2 sm:gap-8 max-sm:py-2  overflow-y-auto">
-      <div className="flex-between items-start max-md:flex-wrap-reverse ">
+    <section className="home-page-setup px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex-verticle gap-4 sm:gap-8 max-sm:py-2 overflow-y-auto">
+      <div className="flex-between items-start max-md:flex-wrap-reverse">
         <div className="flex flex-col md:gap-4">
           <h2 className="head-font">What kind of IB Student are you?</h2>
           <p className="para-font">
@@ -48,24 +48,6 @@ const HomePage = () => {
           />
         </div>
       </div>
-
-      {/* <motion.div
-        className="flex gap-5 justify-start overflow-x-auto w-[80%] min-h-20 max-md:w-full flex-nowrap max-sm:px-0  no-scrollbar md:rounded-2xl rounded-xl"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        {homePageCardsData.map((data) => (
-          <motion.div
-            key={data.id}
-            className="card rounded-2xl bg-white flex justify-center items-center flex-col overflow-hidden "
-            variants={item}
-          >
-            <img src={data.imgSrc} alt="Skateboard" className="" />
-            <p className=" text-center">{data.title}</p>
-          </motion.div>
-        ))}
-      </motion.div> */}
 
       <motion.div
         className="flex gap-2 items-center overflow-x-auto w-[80%] min-h-60 rounded-xl snap-x snap-proximity"
