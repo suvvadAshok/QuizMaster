@@ -166,7 +166,7 @@ export function LeadDetails() {
               <p>Finally, could you drop your school name?</p>
               <form onSubmit={handleSubmit} className="w-full">
                 <input
-                  xlinkHref
+                  required
                   type="text"
                   name="school"
                   placeholder="Enter School name"
