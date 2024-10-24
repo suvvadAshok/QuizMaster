@@ -62,7 +62,7 @@ const resultData = [
   {
     user: "The Last Minute Genius",
     userImg: (
-      <LastMinuteGenius className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-96 w-96" />
+      <LastMinuteGenius className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-96 w-96 lg:absolute lg:-right-80 lg:-bottom-16" />
     ),
     keywords: [
       "Thrives Under Pressure",
@@ -75,7 +75,7 @@ const resultData = [
   {
     user: "The Study Buddy",
     userImg: (
-      <StudyBuddy className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+      <StudyBuddy className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 lg:absolute lg:-right-80 lg:-bottom-16" />
     ),
     keywords: [
       "Better With Friends",
@@ -88,7 +88,7 @@ const resultData = [
   {
     user: "The Chill Master",
     userImg: (
-      <ChillMaster className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80" />
+      <ChillMaster className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 lg:absolute lg:-right-80 lg:-bottom-16" />
     ),
     keywords: [
       "Calm and Relaxed",

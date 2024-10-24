@@ -83,9 +83,9 @@ function Quiz() {
           )}
 
           <BottomQuestionSteps
-            setQNum={setQNum}
-            qNum={qNum}
-            answers={answers}
+          // setQNum={setQNum}
+          // qNum={qNum}
+          // answers={answers}
           />
         </div>
       </>
