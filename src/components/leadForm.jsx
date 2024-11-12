@@ -13,6 +13,7 @@ export function LeadForm({ user }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      navigate("/result", { state: { user } });
       const response = await axios.post(
         "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
         {
@@ -29,6 +30,7 @@ export function LeadForm({ user }) {
       navigate("/result", { state: { user } });
     } catch (error) {
       console.error("Error:", error);
+      navigate("/result", { state: { user } });
     }
   };
 

@@ -54,6 +54,7 @@ export function LeadDetails() {
       navigate("/result");
     } catch (error) {
       console.error("Error:", error);
+      navigate("/result");
     }
   }
 
