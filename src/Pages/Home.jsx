@@ -5,6 +5,8 @@ import Balance from "../assets/images/Balance.svg";
 import { motion } from "framer-motion";
 import logo from "../assets/images/logo.svg";
 
+
+
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
