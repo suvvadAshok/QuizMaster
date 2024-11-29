@@ -96,7 +96,7 @@ function Result() {
     ) {
       link = `whatsapp://send?text=${userData.whatsappMsg}`;
     } else {
-      link = `whatsapp://send?text=${userData.whatsappMsg}`;
+      link = `whatsapp://web.whatsapp.com/send?text=${userData.whatsappMsg}`;
     }
 
     window.open(link, "_blank");
