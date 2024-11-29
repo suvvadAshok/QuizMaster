@@ -3,26 +3,45 @@ import LastMinuteGenius from "../assets/images/newLastMinuteGenius.svg";
 import StudyBuddy from "../assets/images/newStudyBuddy.svg";
 import ChillMaster from "../assets/images/newChillMaster.svg";
 import DownloadIcon from "../assets/images/download.svg";
-import { useAtom } from "jotai";
-import { userAtom } from "../atom.js";
-import { useLocation } from "react-router-dom";
 import { toPng } from "html-to-image";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { useEffect, useState } from "react";
-
-const resultData = [
-  { user: "The Planner", resultImage: Planner },
-  { user: "The Last Minute Genius", resultImage: LastMinuteGenius },
-  { user: "The Study Buddy", resultImage: StudyBuddy },
-  { user: "The Chill Master", resultImage: ChillMaster },
-];
+import { useParams } from "react-router-dom";
+import whatsappIcon from "../assets/images/whatsapp.svg";
 
 function Result() {
-  const [user] = useAtom(userAtom);
-  const location = useLocation();
-  const { name = "Anonymous", grade = "N/A" } = location.state || {};
+  // const location = useLocation();
+  const { name = "Anonymous", user = "" } = useParams();
   const [fireWorks, setFireWorks] = useState(false);
+
+  const resultData = [
+    {
+      user: "The Planner",
+      resultImage: Planner,
+      whatsappMsg: `My quiz result says I’m The Planner! Organized and unstoppable. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}.  
+  Take the quiz with Sparkl and find out! who you are at https://ibquiz.advaitlabs.com`,
+    },
+    {
+      user: "The Last Minute Genius",
+      resultImage: LastMinuteGenius,
+      whatsappMsg: `I’m The Last-Minute Genius! Sharp under pressure. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
+  Think you’re the same? Take the quiz with Sparkl to find your IB style! who you are at https://ibquiz.advaitlabs.com`,
+    },
+    {
+      user: "The Study Buddy",
+      resultImage: StudyBuddy,
+      whatsappMsg: `I’m The Study Buddy! Collaborative and supportive. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
+   What about you? Take the quiz with Sparkl to discover your IB vibe at https://ibquiz.advaitlabs.com`,
+    },
+    {
+      user: "The Chill Master",
+      resultImage: ChillMaster,
+      whatsappMsg: `I’m The Chill Master! Calm and confident. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
+  Ready to see who you are? Take the quiz with Sparkl at https://ibquiz.advaitlabs.com and share your result!
+  `,
+    },
+  ];
 
   useEffect(() => {
     setFireWorks(true); // Start fireworks
@@ -67,6 +86,22 @@ function Result() {
     }
   };
 
+  const shareOnWhatsapp = () => {
+    let link;
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      link = `whatsapp://send?text=${userData.whatsappMsg}`;
+    } else {
+      link = `whatsapp://send?text=${userData.whatsappMsg}`;
+    }
+
+    window.open(link, "_blank");
+  };
+
   return (
     <section className="w-screen h-screen font-custome_font_1 max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center flex-col relative">
       <motion.div
@@ -84,6 +119,12 @@ function Result() {
         <p>Download here:</p>
         <button onClick={downloadImage}>
           <img src={DownloadIcon} alt="Download" />
+        </button>
+      </div>
+      <div className="flex-horizontal gap-4 p-8">
+        <p>Share here:</p>
+        <button onClick={shareOnWhatsapp}>
+          <img src={whatsappIcon} alt="Download" />
         </button>
       </div>
     </section>
