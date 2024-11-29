@@ -2,11 +2,8 @@ import { Link } from "react-router-dom";
 import skateboard from "../assets/images/skateboard.svg";
 import Ace from "../assets/images/Aces.svg";
 import Balance from "../assets/images/Balance.svg";
-import architect from "../assets/images/architect.svg";
 import { motion } from "framer-motion";
 import logo from "../assets/images/logo.svg";
-
-
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -61,7 +58,7 @@ const HomePage = () => {
           <motion.div
             key={data.id}
             variants={item}
-            className="flex-verticle bg-white min-w-64 h-full overflow-y-hidden py-6  rounded-xl snap-center"
+            className="flex-verticle bg-white min-w-96 max-md:min-w-80 h-full overflow-y-hidden py-6  rounded-xl snap-center"
           >
             <img src={data.imgSrc} alt="" className="" />
             <p className="text-nowrap">{data.title}</p>
@@ -115,10 +112,5 @@ const homePageCardsData = [
     id: 3,
     imgSrc: Balance,
     title: "Balances Everything",
-  },
-  {
-    id: 4,
-    imgSrc: architect,
-    title: "Architecture",
   },
 ];
