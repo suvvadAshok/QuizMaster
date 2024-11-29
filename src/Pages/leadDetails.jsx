@@ -3,6 +3,8 @@ import { FormFilling } from "../assets/images/formFilling";
 import { RightArrow } from "../assets/images/rightArrow";
 import { SearchingImg } from "../assets/images/searching";
 import React from "react";
+import { useAtom } from "jotai";
+import { userAtom } from "../atom.js";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +14,7 @@ export function LeadDetails() {
   const [grade, setGrade] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [school, setSchool] = React.useState("");
+  const [user] = useAtom(userAtom);
 
   const navigate = useNavigate();
 
@@ -38,7 +41,7 @@ export function LeadDetails() {
     setSchool(e.target.school.value);
 
     try {
-      const response = ""
+      const response = "";
       // await axios.post(
       //   "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
       //   {
@@ -52,7 +55,7 @@ export function LeadDetails() {
       //   }
       // );
       console.log(response);
-      navigate("/result", { state: {name,grade } });
+      navigate(`/result/${name}/${user}`);
     } catch (error) {
       console.error("Error:", error);
     }
