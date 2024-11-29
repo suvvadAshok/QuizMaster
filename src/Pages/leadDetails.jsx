@@ -3,7 +3,7 @@ import { FormFilling } from "../assets/images/formFilling";
 import { RightArrow } from "../assets/images/rightArrow";
 import { SearchingImg } from "../assets/images/searching";
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export function LeadDetails() {
@@ -38,26 +38,26 @@ export function LeadDetails() {
     setSchool(e.target.school.value);
 
     try {
-      const response = await axios.post(
-        "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
-        {
-          Name: name,
-          Phone: phone,
-          Grade: grade,
-          School: school,
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = ""
+      // await axios.post(
+      //   "https://sheet.best/api/sheets/5d9d2c0a-197c-4000-9e70-614b732d7dd4",
+      //   {
+      //     Name: name,
+      //     Phone: phone,
+      //     Grade: grade,
+      //     School: school,
+      //   },
+      //   {
+      //     headers: { "Content-Type": "application/json" },
+      //   }
+      // );
       console.log(response);
-      navigate("/result");
+      navigate("/result", { state: {name,grade } });
     } catch (error) {
       console.error("Error:", error);
       navigate("/result");
     }
   }
-
   return (
     <div className="h-screen w-screen font-custome_font_2 bg-custom-gradient px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex flex-col gap-8 justify-center overflow-y-auto">
       {state ? (

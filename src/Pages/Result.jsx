@@ -1,102 +1,93 @@
-import { Planner } from "../assets/images/planner";
-import { LastMinuteGenius } from "../assets/images/lastMinuteGenius";
-import { StudyBuddy } from "../assets/images/studyBuddy";
-import { ChillMaster } from "../assets/images/chillMaster";
-import plannerIcon from "../assets/images/plannerIcon.svg";
-import lastMinuteGeniusIcon from "../assets/images/lastMinuteGeniusIcon.svg";
-import studyBuddyIcon from "../assets/images/studyBuddyIcon.svg";
-import chillMasterIcon from "../assets/images/chillMasterIcon.svg";
+import Planner from "../assets/images/newPlanner.svg";
+import LastMinuteGenius from "../assets/images/newLastMinuteGenius.svg";
+import StudyBuddy from "../assets/images/newStudyBuddy.svg";
+import ChillMaster from "../assets/images/newChillMaster.svg";
+import DownloadIcon from "../assets/images/download.svg";
 import { useAtom } from "jotai";
 import { userAtom } from "../atom.js";
+import { useLocation } from "react-router-dom";
+import { toPng } from "html-to-image";
+import { motion } from "framer-motion";
+import confetti from "canvas-confetti";
+import { useEffect, useState } from "react";
+
+const resultData = [
+  { user: "The Planner", resultImage: Planner },
+  { user: "The Last Minute Genius", resultImage: LastMinuteGenius },
+  { user: "The Study Buddy", resultImage: StudyBuddy },
+  { user: "The Chill Master", resultImage: ChillMaster },
+];
 
 function Result() {
   const [user] = useAtom(userAtom);
+  const location = useLocation();
+  const { name = "Anonymous", grade = "N/A" } = location.state || {};
+  const [fireWorks, setFireWorks] = useState(false);
 
-  console.log(user);
+  useEffect(() => {
+    setFireWorks(true); // Start fireworks
+    const timer = setTimeout(() => setFireWorks(false), 3000); // Stop fireworks after 3 seconds
 
-  const userData = resultData.find((data) => data.user.includes(user));
+    return () => clearTimeout(timer); // Cleanup
+  }, []);
+
+  useEffect(() => {
+    if (fireWorks) {
+      const duration = 3 * 1000;
+      const animationEnd = Date.now() + duration;
+      const interval = setInterval(() => {
+        if (Date.now() > animationEnd) {
+          clearInterval(interval);
+          return;
+        }
+        confetti({
+          particleCount: 100,
+          startVelocity: 30,
+          spread: 360,
+          origin: { x: Math.random(), y: Math.random() - 0.2 },
+        });
+      }, 250);
+    }
+  }, [fireWorks]);
+
+  const userData =
+    resultData.find((data) => data.user.includes(user)) || resultData[0];
+
+  const downloadImage = () => {
+    const element = document.getElementById("capture");
+    if (element) {
+      toPng(element, { cacheBust: true })
+        .then((dataUrl) => {
+          const link = document.createElement("a");
+          link.download = "my-image.png";
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch((err) => console.error("Oops, something went wrong!", err));
+    }
+  };
 
   return (
-    <section className="w-screen h-screen font-custome_font_1 max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center">
-      {/* <div className="flex max-md:flex-col justify-center items-center h-full gap-2 "> */}
-      <div className="bg-white rounded-xl p-8 max-md:w-[90%] flex flex-col md:justify-center justify-start items-center gap-4 lg:relative">
-        <div className="flex justify-between items-center w-full">
-          <div>
-            <p className="text-xl font-semibold">{userData.user}</p>
-            <p className="text-lg font-medium">You’re the type of student</p>
-          </div>
-          <div>
-            <img src={userData.userIcon} alt="" className="h-10 w-10" />
-          </div>
-        </div>
-        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
-          {userData.keywords.map((i) => (
-            <li key={i} className="font-semibold text-nowrap max-sm:text-wrap">
-              {i}
-            </li>
-          ))}
-        </div>
-        {userData.userImg}
+    <section className="w-screen h-screen font-custome_font_1 max-sm:px-5 max-sm:w-full bg-custom-gradient flex justify-center items-center flex-col relative">
+      <motion.div
+        initial={{ scale: 0.25, rotateY: 0 }}
+        animate={{ scale: 1, rotateY: 360 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+        id="capture"
+        className="bg-result-card bg-no-repeat bg-cover max-w-[500px] shadow-2xl p-8 flex flex-col items-center justify-center gap-5"
+      >
+        <h1 className="head-font">IB Persona Results</h1>
+        <p className="para-font">{name} is</p>
+        <img src={userData.resultImage} alt={userData.user} />
+      </motion.div>
+      <div className="flex-horizontal gap-4 p-8">
+        <p>Download here:</p>
+        <button onClick={downloadImage}>
+          <img src={DownloadIcon} alt="Download" />
+        </button>
       </div>
     </section>
   );
 }
 
 export default Result;
-
-const resultData = [
-  {
-    user: "The Planner",
-    userImg: (
-      <Planner className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-96 w-96 lg:absolute lg:-right-80 lg:-bottom-16" />
-    ),
-    keywords: [
-      "Loves structure",
-      "Ace every challange",
-      "Plan Ahead",
-      "Well organised",
-      "Does not Miss Deadlines",
-    ],
-    userIcon: plannerIcon,
-  },
-  {
-    user: "The Last Minute Genius",
-    userImg: (
-      <LastMinuteGenius className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-96 w-96 lg:absolute lg:-right-80 lg:-bottom-16" />
-    ),
-    keywords: [
-      "Thrives Under Pressure",
-      "Pulls It All Together",
-      "Has Impressive Strategies",
-      "Finds Final Hour Solutions",
-    ],
-    userIcon: lastMinuteGeniusIcon,
-  },
-  {
-    user: "The Study Buddy",
-    userImg: (
-      <StudyBuddy className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 lg:absolute lg:-right-80 lg:-bottom-16" />
-    ),
-    keywords: [
-      "Better With Friends",
-      "Loves Group Study",
-      "Stays Motivated",
-      "Collaborative Learning",
-    ],
-    userIcon: studyBuddyIcon,
-  },
-  {
-    user: "The Chill Master",
-    userImg: (
-      <ChillMaster className="max-md:h-40 max-sm:h-32 max-sm:w-60 max-md:w-72 h-80 w-80 lg:absolute lg:-right-80 lg:-bottom-16" />
-    ),
-    keywords: [
-      "Calm and Relaxed",
-      "Eventually Balances",
-      "Tension Free",
-      "Loves to Enjoy",
-      "Schoolwork Is Easy",
-    ],
-    userIcon: chillMasterIcon,
-  },
-];
