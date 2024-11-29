@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { qNumAtom } from "../atom.js";
 import { PropTypes } from "prop-types";
+import { Answer } from "../assets/images/answer.jsx";
+import { NoAnswer } from "../assets/images/noAnswer.jsx";
 
 const OptionSelection = ({ questionData, onAnswerChange, selectedAnswer }) => {
   const [qNum, setQNum] = useAtom(qNumAtom);
@@ -64,7 +66,7 @@ const OptionSelection = ({ questionData, onAnswerChange, selectedAnswer }) => {
         {questionData.options.map((option) => (
           <motion.div
             key={option.label}
-            className={`p-2 sm:p-4 rounded-lg sm:rounded-xl bg-white/90 border-2 shadow-md hover:shadow-xl transition-all duration-300 ${
+            className={`p-2 sm:p-4 rounded-lg sm:rounded-xl bg-white/90 border-2 shadow-md hover:shadow-xl transition-all duration-300 flex items-center  ${
               selectedAnswer === option.label
                 ? "border-[#3f80fd]"
                 : "border-transparent"
@@ -72,6 +74,11 @@ const OptionSelection = ({ questionData, onAnswerChange, selectedAnswer }) => {
             variants={item}
             onClick={() => handleOptionChange(option.label)}
           >
+            {selectedAnswer === option.label ? (
+              <Answer stroke={"#3f80fd"} />
+            ) : (
+              <NoAnswer />
+            )}
             <label>
               <p className="p-1">{option.option}</p>
             </label>
