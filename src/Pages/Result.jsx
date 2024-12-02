@@ -88,15 +88,15 @@ function Result() {
 
   const shareOnWhatsapp = () => {
     let link;
-
+    const encodedMsg = encodeURIComponent(userData.whatsappMsg);
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     ) {
-      link = `whatsapp://send?text=${userData.whatsappMsg}`;
+      link = `whatsapp://send?text=${encodedMsg}`;
     } else {
-      link = `whatsapp://web.whatsapp.com/send?text=${userData.whatsappMsg}`;
+      link = `https://wa.me/?text=${encodedMsg}`;
     }
 
     window.open(link, "_blank");
@@ -115,7 +115,19 @@ function Result() {
         <p className="para-font">{name} is</p>
         <img src={userData.resultImage} alt={userData.user} />
       </motion.div>
-      <div className="flex-horizontal gap-4 p-8">
+
+      <div className="flex-horizontal flex-wrap gap-4 p-8">
+        Your personalized card is ready—Download now!{" "}
+        <button onClick={downloadImage}>
+          <img src={DownloadIcon} alt="Download" />
+        </button>{" "}
+        Who’s next? Share and challenge your friends!
+        <button onClick={shareOnWhatsapp}>
+          <img src={whatsappIcon} alt="Download" />
+        </button>
+      </div>
+
+      {/* <div className="flex-horizontal gap-4 p-8">
         <p>Download here:</p>
         <button onClick={downloadImage}>
           <img src={DownloadIcon} alt="Download" />
@@ -126,7 +138,7 @@ function Result() {
         <button onClick={shareOnWhatsapp}>
           <img src={whatsappIcon} alt="Download" />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -20,3 +20,7 @@ export const QuestionStepsPropTypes = {
     setQNum: PropTypes.func.isRequired,
     answers: PropTypes.object.isRequired,
   };
+
+export const ProgressPercentage ={
+  percent : PropTypes.number
+}
