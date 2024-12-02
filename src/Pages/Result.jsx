@@ -20,25 +20,25 @@ function Result() {
       user: "The Planner",
       resultImage: Planner,
       whatsappMsg: `My quiz result says I’m The Planner! Organized and unstoppable. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}.  
-  Take the quiz with Sparkl and find out! who you are at https://ibquiz.advaitlabs.com`,
+  \n Take the quiz with Sparkl and find out! who you are at https://ibquiz.advaitlabs.com`,
     },
     {
       user: "The Last Minute Genius",
       resultImage: LastMinuteGenius,
       whatsappMsg: `I’m The Last-Minute Genius! Sharp under pressure. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
-  Think you’re the same? Take the quiz with Sparkl to find your IB style! who you are at https://ibquiz.advaitlabs.com`,
+  Think you’re the same?\n Take the quiz with Sparkl to find your IB style! who you are at https://ibquiz.advaitlabs.com`,
     },
     {
       user: "The Study Buddy",
       resultImage: StudyBuddy,
       whatsappMsg: `I’m The Study Buddy! Collaborative and supportive. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
-   What about you? Take the quiz with Sparkl to discover your IB vibe at https://ibquiz.advaitlabs.com`,
+   What about you?\n Take the quiz with Sparkl to discover your IB vibe at https://ibquiz.advaitlabs.com`,
     },
     {
       user: "The Chill Master",
       resultImage: ChillMaster,
       whatsappMsg: `I’m The Chill Master! Calm and confident. Check my result on https://ibquiz.advaitlabs.com/result/${name}/${user}
-  Ready to see who you are? Take the quiz with Sparkl at https://ibquiz.advaitlabs.com and share your result!
+  Ready to see who you are?\n Take the quiz with Sparkl at https://ibquiz.advaitlabs.com and share your result!
   `,
     },
   ];
