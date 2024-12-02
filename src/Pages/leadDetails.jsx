@@ -7,6 +7,7 @@ import { useAtom } from "jotai";
 import { userAtom } from "../atom.js";
 // import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "../components/circle.jsx";
 
 export function LeadDetails() {
   const [state, setState] = React.useState(true);
@@ -14,6 +15,7 @@ export function LeadDetails() {
   const [grade, setGrade] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [school, setSchool] = React.useState("");
+  const [percent, setPersent] = React.useState(0);
   const [user] = useAtom(userAtom);
 
   const navigate = useNavigate();
@@ -21,24 +23,30 @@ export function LeadDetails() {
   function handleName(e) {
     e.preventDefault();
     setName(e.target.name.value);
+    setPersent(25);
     e.target.reset();
   }
 
   function handleGrade(e) {
     e.preventDefault();
     setGrade(e.target.grade.value);
+    setPersent(50);
     e.target.reset();
   }
 
   function handlePhone(e) {
     e.preventDefault();
     setPhone(e.target.phone.value);
+    setPersent(75);
     e.target.reset();
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setSchool(e.target.school.value);
+    setPersent(100);
+
+    console.log(school);
 
     try {
       const response = "";
@@ -78,6 +86,9 @@ export function LeadDetails() {
               Don’t worry, it’ll only take a minute, and who knows — it could be
               the start of something pretty cool! 😎
             </p>
+            <p className="text-xl font-semibold">
+              Just 4 steps ahead to complete
+            </p>
             <button
               className="flex justify-center items-center md:gap-2 gap-1 bg-black text-white px-6 py-4 rounded-lg "
               onClick={() => setState(false)}
@@ -90,6 +101,7 @@ export function LeadDetails() {
         </>
       ) : (
         <>
+          <CircularProgress percent={percent} />
           {name === "" ? (
             <div className="absolute top-[20%] w-[50%] max-md:w-[90%] flex flex-col gap-4 items-start">
               <h2 className="font-semibold text-2xl">
