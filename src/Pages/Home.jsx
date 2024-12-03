@@ -5,8 +5,6 @@ import Balance from "../assets/images/Balance.svg";
 import { motion } from "framer-motion";
 import logo from "../assets/images/logo.svg";
 
-
-
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -34,9 +32,7 @@ const HomePage = () => {
         <div className="flex flex-col md:gap-4">
           <h2 className="head-font">What kind of IB Student are you?</h2>
           <p className="para-font">
-            IB is more than just a curriculum—it&rsquo;s a lifestyle! Are you
-            the cool-under-pressure student, the one who aces every subject, or
-            maybe the one who&rsquo;s all about balancing study and fun?
+          Are you the ace, the calm strategist, or the ultimate multitasker? Find out which type of IB student you are with this fun, interactive quiz! Share it and challenge with your friends
           </p>
         </div>
         <div>
@@ -62,31 +58,31 @@ const HomePage = () => {
             variants={item}
             className="flex-verticle bg-white min-w-96 max-md:min-w-80 h-full overflow-y-hidden py-6  rounded-xl snap-center"
           >
-            <img src={data.imgSrc} alt="" className="" />
+            <img src={data.imgSrc} alt="" className="aspect-square" />
             <p className="text-nowrap">{data.title}</p>
           </motion.div>
         ))}
       </motion.div>
 
       <div className="flex-between items-center max-md:hidden">
-        <p className="para-font">
+        {/* <p className="para-font">
           Find out which type of IB student you are with this fun, interactive
           quiz! Share your results with friends and see who they are!
-        </p>
-        <div>
-          <Link
-            to="/quiz"
-            className="text-white bg-[#fbbd2d] py-5 px-8 text-xl rounded-xl font-500 text-nowrap"
-          >
-            Let&rsquo;s start
-          </Link>
-        </div>
+        </p> */}
+        {/* <div> */}
+        <Link
+          to="/quiz"
+          className="text-white bg-[#fbbd2d] py-5 px-8 text-xl rounded-xl font-500 text-nowrap"
+        >
+          Let&rsquo;s start
+        </Link>
+        {/* </div> */}
       </div>
 
-      <p className="para-font md:hidden">
+      {/* <p className="para-font md:hidden">
         Find out which type of IB student you are with this fun, interactive
         quiz! Share your results with friends and see who they are!
-      </p>
+      </p> */}
 
       <div className="md:hidden sticky bottom-2 w-[100%] bg-[#fbbd2d] text-black py-3 text-center text-xl rounded-xl font-500">
         <Link to="/quiz" className="text-nowrap">
