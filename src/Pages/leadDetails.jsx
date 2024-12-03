@@ -66,6 +66,7 @@ export function LeadDetails() {
       navigate(`/result/${name}/${user}`);
     } catch (error) {
       console.error("Error:", error);
+      navigate("/result");
     }
   }
   return (
