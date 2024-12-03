@@ -28,11 +28,13 @@ const item = {
 const HomePage = () => {
   return (
     <section className="home-page-setup px-16 max-lg:px-12 max-md:px-8 max-sm:px-4 flex-verticle gap-4 sm:gap-8 max-sm:py-2 overflow-y-auto">
-      <div className="flex-between items-start max-md:flex-wrap-reverse">
-        <div className="flex flex-col md:gap-4">
+      <div className="flex-between items-start max-md:flex-wrap-reverse gap-8">
+        <div className="flex flex-col gap-4 ">
           <h2 className="head-font">What kind of IB Student are you?</h2>
           <p className="para-font">
-          Are you the ace, the calm strategist, or the ultimate multitasker? Find out which type of IB student you are with this fun, interactive quiz! Share it and challenge with your friends
+            Are you the ace, the calm strategist, or the ultimate multitasker?
+            Find out which type of IB student you are with this fun, interactive
+            quiz! Share it and challenge with your friends
           </p>
         </div>
         <div>
